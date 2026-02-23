@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Button } from '@/components/ui';
 import { APP_CONFIG } from '@/config/app';
 
@@ -7,104 +7,82 @@ interface HeaderProps {
 }
 
 const Header = ({ className }: HeaderProps) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className={`bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50 ${className || ''}`}>
-      <Container>
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h1 className="text-xl font-bold text-gray-900 font-display">
-                {APP_CONFIG.name}
-              </h1>
-            </div>
-          </div>
-          
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium relative group">
-              Features
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
-            </a>
-            <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium relative group">
-              Pricing
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
-            </a>
-            <a href="#docs" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium relative group">
-              Docs
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
-            </a>
-            <a href="#blog" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium relative group">
-              Blog
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-200 group-hover:w-full"></span>
-            </a>
-          </nav>
-          
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" className="text-gray-600 hover:text-gray-900">
-              Sign In
-            </Button>
-            <Button 
-              size="sm" 
-              className="bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-            >
-              Get Started
-            </Button>
-          </div>
-          
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
+    <header className={`absolute top-0 left-0 right-0 z-50 ${className || ''}`}>
+      <div className="max-w-7xl mx-auto px-lg py-md">
+        {/* 3-column grid layout: Logo left, Nav center, CTAs right */}
+        <div className="grid grid-cols-3 items-center gap-xs">
+            {/* Section 1: Brand (logomark + wordmark) - Left aligned */}
+            <div className="flex items-center gap-sm">
+              <svg
+                className="w-24 h-24 text-action"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                <path d="M12 6 L12 12 L16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="12" cy="12" r="2" fill="currentColor"/>
               </svg>
-            </button>
-          </div>
-        </div>
-        
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 animate-slide-down">
-            <div className="flex flex-col space-y-4">
-              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium py-2">
-                Features
-              </a>
-              <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium py-2">
-                Pricing
-              </a>
-              <a href="#docs" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium py-2">
-                Docs
-              </a>
-              <a href="#blog" className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium py-2">
-                Blog
-              </a>
-              <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
-                <Button variant="ghost" size="sm" className="justify-start">
-                  Sign In
-                </Button>
-                <Button size="sm" className="bg-gradient-to-r from-primary-600 to-primary-700">
-                  Get Started
-                </Button>
-              </div>
+              <span className="font-heading text-h5 font-bold text-action">
+                {APP_CONFIG.name}
+              </span>
             </div>
-          </div>
-        )}
-      </Container>
+
+            {/* Section 2: Navigation Links - Center */}
+            <nav className="hidden md:flex items-center justify-center gap-lg">
+              <a
+                href="#how-it-works"
+                className="font-body text-body-md text-body hover:text-action transition-all duration-200 font-medium relative group"
+              >
+                How It Works
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-action transition-all duration-200 group-hover:w-full"></span>
+              </a>
+              <a
+                href="#pricing"
+                className="font-body text-body-md text-body hover:text-action transition-all duration-200 font-medium relative group"
+              >
+                Pricing
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-action transition-all duration-200 group-hover:w-full"></span>
+              </a>
+              <a
+                href="#testimonials"
+                className="font-body text-body-md text-body hover:text-action transition-all duration-200 font-medium relative group"
+              >
+                Stories
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-action transition-all duration-200 group-hover:w-full"></span>
+              </a>
+            </nav>
+
+            {/* Section 3: CTAs - Right aligned */}
+            <div className="hidden md:flex items-center justify-end gap-md">
+              <button
+                className="font-body text-body-md text-body hover:text-action transition-colors font-medium"
+                aria-label="Sign in to your account"
+              >
+                Sign In
+              </button>
+              <Button
+                size="md"
+                aria-label="Start your free journey to discover purpose"
+              >
+                Begin for Free
+              </Button>
+            </div>
+        </div>
+      </div>
     </header>
   );
 };

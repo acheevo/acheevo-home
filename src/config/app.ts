@@ -7,11 +7,11 @@ interface AppConfig {
 }
 
 export const APP_CONFIG: AppConfig = {
-  name: import.meta.env.APP_NAME || 'acheevo-home',
+  name: import.meta.env.APP_NAME || 'Acheevo',
   version: '1.0.0',
-  description: 'A scalable React frontend template with TypeScript and Tailwind CSS',
-  author: 'Developer',
-  repository: 'https://github.com/your-username/frontend-template',
+  description: 'Discover your purpose through meaningful AI-guided conversations',
+  author: 'Acheevo',
+  repository: 'https://github.com/acheevo/acheevo-home',
 };
 
 export default APP_CONFIG;

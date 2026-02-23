@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(npm create:*)",
@@ -17,7 +20,21 @@
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:www.calm.com)",
+      "WebFetch(domain:www.headspace.com)",
+      "Bash(npm install:*)",
+      "WebSearch",
+      "WebFetch(domain:undraw.co)",
+      "Bash(npm run preview:*)",
+      "Bash(grep:*)",
+      "Bash(open \"https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn\")",
+      "Bash(open:*)",
+      "Bash(python3:*)",
+      "Bash(lsof:*)",
+      "Bash(find:*)",
+      "Bash(done)"
     ],
     "deny": []
   }

@@ -1,106 +1,100 @@
 import { Container, Button } from '@/components/ui';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const CTA = () => {
   return (
-    <section className="py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-accent-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-primary-500/5 via-transparent to-transparent"></div>
+    <section className="relative p-[80px] overflow-hidden bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500">
+      {/* Enhanced background pattern - scattered dots */}
+      <div className="absolute inset-0 opacity-[0.15]">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(255, 255, 255) 1.5px, transparent 0)',
+          backgroundSize: '48px 48px'
+        }} />
       </div>
-      
-      <Container className="relative">
-        <div className="text-center max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center rounded-full bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-300 ring-1 ring-inset ring-primary-500/20 mb-8">
-            <svg className="w-4 h-4 mr-2 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-            </svg>
-            Free forever • No credit card required
-          </div>
-          
-          {/* Main headline */}
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl mb-8">
-            Ready to build something
-            <span className="bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent block">
-              extraordinary?
-            </span>
-          </h2>
-          
-          {/* Subtitle */}
-          <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Join thousands of developers who have shipped faster with our production-ready template. 
-            Start building your next project in minutes, not hours.
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 shadow-lg hover:shadow-primary-500/25 transform hover:scale-105 transition-all duration-200 px-8 py-4 text-lg"
-            >
-              Get Started Now
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full sm:w-auto border-gray-600 text-gray-300 hover:border-gray-500 hover:bg-gray-800/50 px-8 py-4 text-lg group"
-            >
-              <svg className="mr-2 w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
-              View on GitHub
-            </Button>
-          </div>
-          
-          {/* Trust indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="group">
-              <div className="flex items-center justify-center mb-3">
-                <svg className="w-8 h-8 text-green-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-                <span className="text-2xl font-bold text-white">MIT License</span>
-              </div>
-              <p className="text-gray-400">Free to use for any project</p>
+
+      {/* Gentle wavy lines pattern */}
+      <div className="absolute inset-0 opacity-[0.08]">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="wave-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+              <path
+                d="M0 50 Q 25 30, 50 50 T 100 50"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+                opacity="0.5"
+              />
+              <path
+                d="M0 70 Q 25 50, 50 70 T 100 70"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+                opacity="0.3"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#wave-pattern)" />
+        </svg>
+      </div>
+
+      {/* Decorative gradient orbs */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
+      </div>
+
+      <Container>
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-2xl">
+
+            {/* Left side - Message */}
+            <div className="flex-1 text-center md:text-left">
+              <ScrollReveal animation="slide-up">
+                <h2 className="font-heading text-h3 lg:text-h2 text-white leading-tight mb-lg font-bold" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.2)' }}>
+                  Ready to discover your purpose?
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal animation="slide-up" delay={100}>
+                <p className="font-body text-body-lg lg:text-body-xl text-white/95 leading-relaxed font-light" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
+                  Join 10,000+ people who've found clarity through meaningful conversation.
+                </p>
+              </ScrollReveal>
             </div>
-            
-            <div className="group">
-              <div className="flex items-center justify-center mb-3">
-                <svg className="w-8 h-8 text-blue-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-2xl font-bold text-white">24/7 Support</span>
-              </div>
-              <p className="text-gray-400">Community & documentation</p>
+
+            {/* Right side - Enhanced CTA */}
+            <div className="flex-shrink-0">
+              <ScrollReveal animation="slide-up" delay={200}>
+                <div className="flex flex-col items-center md:items-end gap-md">
+                  {/* Solid white button with purple text and enhanced padding */}
+                  <Button
+                    size="lg"
+                    className="bg-white hover:bg-gray-50 shadow-2xl font-bold hover:scale-105 transition-all"
+                    style={{
+                      color: '#7C3AED',
+                      paddingTop: '16px',
+                      paddingBottom: '16px',
+                      paddingLeft: '40px',
+                      paddingRight: '40px',
+                      fontSize: '18px'
+                    }}
+                    aria-label="Start your purpose discovery journey for free"
+                  >
+                    Begin for Free
+                  </Button>
+
+                  {/* Trust note positioned to the right */}
+                  <div className="flex items-center gap-xs">
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-white font-medium text-body-md" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)' }}>
+                      Free • No credit card required
+                    </span>
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
-            
-            <div className="group">
-              <div className="flex items-center justify-center mb-3">
-                <svg className="w-8 h-8 text-purple-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                </svg>
-                <span className="text-2xl font-bold text-white">Regular Updates</span>
-              </div>
-              <p className="text-gray-400">Latest features & security</p>
-            </div>
-          </div>
-          
-          {/* Social proof */}
-          <div className="mt-16 pt-8 border-t border-gray-700">
-            <p className="text-gray-400 mb-6">Trusted by teams at</p>
-            <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-              {/* Company logos would go here - using placeholder text for now */}
-              <div className="bg-gray-800 rounded-lg px-6 py-3 text-gray-300 font-medium">Google</div>
-              <div className="bg-gray-800 rounded-lg px-6 py-3 text-gray-300 font-medium">Microsoft</div>
-              <div className="bg-gray-800 rounded-lg px-6 py-3 text-gray-300 font-medium">Netflix</div>
-              <div className="bg-gray-800 rounded-lg px-6 py-3 text-gray-300 font-medium">Airbnb</div>
-              <div className="bg-gray-800 rounded-lg px-6 py-3 text-gray-300 font-medium">Stripe</div>
-            </div>
+
           </div>
         </div>
       </Container>

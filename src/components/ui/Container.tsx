@@ -19,7 +19,7 @@ const Container = forwardRef<HTMLDivElement, ContainerProps>(
       <div
         ref={ref}
         className={cn(
-          'mx-auto px-4 sm:px-6 lg:px-8',
+          'mx-auto px-2xs sm:px-sm lg:px-xs',
           sizes[size],
           className
         )}

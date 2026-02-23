@@ -1,143 +1,154 @@
-import { Container, Button } from '@/components/ui';
+import { Button } from '@/components/ui';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { APP_CONFIG } from '@/config/app';
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-primary-50/30 pt-20 pb-32 lg:pt-32 lg:pb-40">
-      {/* Background decorations */}
-      <div className="absolute inset-0">
-        <div className="absolute -top-40 -right-32 w-80 h-80 rounded-full bg-gradient-to-br from-primary-400/20 to-accent-400/20 blur-3xl animate-float"></div>
-        <div className="absolute -bottom-32 -left-32 w-80 h-80 rounded-full bg-gradient-to-br from-accent-400/20 to-primary-400/20 blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-primary-100/50 via-transparent to-transparent"></div>
-      </div>
-      
-      <Container className="relative">
-        <div className="text-center max-w-5xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center rounded-full bg-primary-50 px-4 py-2 text-sm font-medium text-primary-700 ring-1 ring-inset ring-primary-700/10 mb-8 animate-slide-down">
-            <span className="relative flex h-2 w-2 mr-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
-            </span>
-            New features available
+    <section className="relative h-[90vh] bg-white flex items-center justify-center overflow-hidden p-sm">
+      <div className="relative z-10 w-full h-full">
+        {/* Hero container with rounded corners and mountain background */}
+        <div className="relative rounded-3xl overflow-hidden h-full flex flex-col">
+          {/* Mountain background image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/images/backgrounds/hero-mountain.jpg)',
+            }}
+          >
+            {/* Gradient overlay for readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-900/65 via-purple-800/55 to-purple-900/75" />
+            <div className="absolute inset-0 bg-purple-600/25 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           </div>
-          
-          {/* Main headline */}
-          <h1 className="font-display text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:text-7xl mb-8 animate-slide-up">
-            Build the{' '}
-            <span className="relative">
-              <span className="bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 bg-clip-text text-transparent animate-gradient-x">
-                future
-              </span>
-              <svg className="absolute -bottom-2 left-0 right-0 h-3 text-primary-200" viewBox="0 0 200 12" fill="currentColor">
-                <path d="M0 8c30-4 60-4 90-4s60 0 90 4v4H0z" />
-              </svg>
-            </span>{' '}
-            of web development
-          </h1>
-          
-          {/* Subtitle */}
-          <p className="text-xl sm:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            Create stunning, scalable applications with our modern React template. 
-            <span className="font-semibold text-gray-800"> Lightning-fast development</span> meets 
-            <span className="font-semibold text-gray-800"> enterprise-grade architecture</span>.
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 shadow-lg hover:shadow-primary-500/25 transform hover:scale-105 transition-all duration-200 px-8 py-4 text-lg"
-            >
-              Start Building Free
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="w-full sm:w-auto border-gray-300 hover:border-gray-400 hover:bg-gray-50 px-8 py-4 text-lg group"
-            >
-              <svg className="mr-2 w-5 h-5 group-hover:animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              View Live Demo
-            </Button>
+
+          {/* Soft ambient light effect */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 rounded-full filter blur-3xl" />
           </div>
-          
-          {/* Social proof */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-500 mb-16 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="flex items-center">
-              <div className="flex -space-x-2 mr-3">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 border-2 border-white"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-accent-400 to-accent-600 border-2 border-white"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 border-2 border-white"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">+</div>
+
+          {/* Navigation - Inside hero container */}
+          <nav className="relative z-20 px-lg py-md">
+            <div className="grid grid-cols-3 items-center gap-xs">
+              {/* Section 1: Brand (logomark + wordmark) - Left aligned */}
+              <div className="flex items-center gap-sm">
+                <svg
+                  className="w-24 h-24 text-white"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                  <path d="M12 6 L12 12 L16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                </svg>
+                <span className="font-heading text-h5 font-bold text-white">
+                  {APP_CONFIG.name}
+                </span>
               </div>
-              <span>10,000+ developers trust us</span>
+
+              {/* Section 2: Navigation Links - Center */}
+              <div className="hidden md:flex items-center justify-center gap-lg">
+                <a
+                  href="#how-it-works"
+                  className="font-body text-body-md text-white/90 hover:text-white transition-all duration-200 font-medium relative group"
+                >
+                  How It Works
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
+                </a>
+                <a
+                  href="#pricing"
+                  className="font-body text-body-md text-white/90 hover:text-white transition-all duration-200 font-medium relative group"
+                >
+                  Pricing
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
+                </a>
+                <a
+                  href="#testimonials"
+                  className="font-body text-body-md text-white/90 hover:text-white transition-all duration-200 font-medium relative group"
+                >
+                  Stories
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
+                </a>
+              </div>
+
+              {/* Section 3: CTAs - Right aligned */}
+              <div className="hidden md:flex items-center justify-end gap-md">
+                <button
+                  className="font-body text-body-md text-white/90 hover:text-white transition-colors font-medium"
+                  aria-label="Sign in to your account"
+                >
+                  Sign In
+                </button>
+                <Button
+                  size="md"
+                  variant="outline"
+                  className="text-white border-white/50 hover:bg-white/10 hover:border-white"
+                  aria-label="Start your free journey to discover purpose"
+                >
+                  Begin for Free
+                </Button>
+              </div>
             </div>
-            <div className="flex items-center">
-              <svg className="w-5 h-5 text-yellow-400 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span>4.9/5 rating from 2,847 reviews</span>
-            </div>
-          </div>
-          
-          {/* Dashboard preview */}
-          <div className="relative animate-scale-in" style={{ animationDelay: '0.4s' }}>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-3xl blur-2xl opacity-20 transform rotate-1"></div>
-            <div className="relative bg-white rounded-2xl shadow-2xl p-8 max-w-6xl mx-auto border border-gray-200/50 backdrop-blur-sm">
-              {/* Browser mockup */}
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                </div>
-                <div className="bg-gray-100 rounded-lg px-4 py-2 text-sm text-gray-600 font-mono">
-                  {APP_CONFIG.name}.dev
-                </div>
-                <div className="w-16"></div>
-              </div>
-              
-              {/* Feature grid */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="group text-center transform hover:scale-105 transition-all duration-300">
-                  <div className="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
-                    <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
+          </nav>
+
+          {/* Content */}
+          <div className="relative flex-grow flex items-center justify-center text-center z-10 py-3xl px-lg">
+            <div className="max-w-4xl mx-auto space-y-xl">
+              {/* Social proof badge */}
+              <ScrollReveal animation="fade-in" delay={0}>
+                <div className="flex items-center justify-center mb-md">
+                  <div className="inline-flex items-center px-md py-xs bg-white/15 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
+                    <span className="font-body text-body-sm text-gray-100 font-medium">Join 10,000+ people finding their purpose</span>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-lg">Lightning Fast</h3>
-                  <p className="text-gray-600">Built with Vite for instant hot reload and optimized builds</p>
                 </div>
-                
-                <div className="group text-center transform hover:scale-105 transition-all duration-300">
-                  <div className="bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
-                    <svg className="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-lg">Type Safe</h3>
-                  <p className="text-gray-600">Full TypeScript support with strict type checking</p>
+              </ScrollReveal>
+
+              {/* Main headline - Emotionally resonant and aspirational */}
+              <ScrollReveal animation="slide-up" delay={100}>
+                <h1 className="font-heading text-h3 md:text-h2 lg:text-h1 text-white leading-tight mb-sm" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3)' }}>
+                  Feeling stuck?{' '}
+                  <br />
+                  Let's figure out what{' '}
+                  <span className="font-bold">you're here to do</span>
+                </h1>
+              </ScrollReveal>
+
+              {/* Subtitle - Speaks to pain and solution */}
+              <ScrollReveal animation="slide-up" delay={200}>
+                <p className="font-body text-body-lg md:text-body-xl text-white leading-relaxed max-w-3xl mx-auto font-light" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)' }}>
+                  Through eight guided conversations, we'll help you understand what you value, what you're good at, and where those two things meet.{' '}
+                  <span className="font-medium text-white">No fluff. Just clarity.</span>
+                </p>
+              </ScrollReveal>
+
+              {/* CTA Buttons - Specific and action-oriented */}
+              <ScrollReveal animation="slide-up" delay={300}>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-md pt-xl">
+                  <Button
+                    variant="gradient"
+                    size="lg"
+                    className="w-full sm:w-auto font-semibold hover:shadow-glow"
+                    aria-label="Begin your 8-conversation journey to discover your purpose"
+                  >
+                    Begin for Free
+                  </Button>
+
+                  {/* Secondary CTA */}
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-full sm:w-auto font-semibold text-white border-white/50 hover:bg-white/10 hover:border-white"
+                    aria-label="Scroll to see how Acheevo works"
+                  >
+                    See How It Works ↓
+                  </Button>
                 </div>
-                
-                <div className="group text-center transform hover:scale-105 transition-all duration-300">
-                  <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow">
-                    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4M13 13h4a2 2 0 012 2v4a2 2 0 01-2 2h-4" />
-                    </svg>
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2 text-lg">Production Ready</h3>
-                  <p className="text-gray-600">Docker, CI/CD, and deployment configs included</p>
-                </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 };
