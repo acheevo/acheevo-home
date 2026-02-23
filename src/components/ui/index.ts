@@ -3,6 +3,7 @@ export { default as Container } from './Container';
 export { default as WaveDivider } from './WaveDivider';
 export { default as ScrollReveal } from './ScrollReveal';
 export { default as FeatureCard } from './FeatureCard';
+export { default as DarkModeToggle } from './DarkModeToggle';
 
 export type { ButtonProps } from './Button';
 export type { ContainerProps } from './Container';

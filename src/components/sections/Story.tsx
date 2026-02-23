@@ -33,11 +33,11 @@ const Story = () => {
   ];
 
   return (
-    <section className="relative p-[80px] bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section className="relative p-[80px] bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 overflow-hidden transition-colors duration-300">
       {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-purple-200 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-64 h-64 bg-pink-200 rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-30 dark:opacity-20 pointer-events-none">
+        <div className="absolute top-20 left-10 w-64 h-64 bg-purple-200 dark:bg-purple-900 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-64 h-64 bg-pink-200 dark:bg-pink-900 rounded-full blur-3xl" />
       </div>
 
       <Container className="relative">
@@ -47,13 +47,13 @@ const Story = () => {
             <p className="eyebrow mb-md">
               YOUR JOURNEY STARTS HERE
             </p>
-            <h2 className="font-heading text-h4 lg:text-h3 text-gray-900 mb-lg font-bold leading-tight">
+            <h2 className="font-heading text-h4 lg:text-h3 text-gray-900 dark:text-white mb-lg font-bold leading-tight">
               We believe everyone deserves to live with{' '}
               <span className="gradient-text">purpose</span>
             </h2>
-            <p className="font-body text-body-lg text-gray-600 leading-relaxed font-light">
+            <p className="font-body text-body-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
               This isn't just another productivity tool or self-help program.{' '}
-              <span className="font-semibold text-gray-900">It's your companion on the most important journey you'll ever take</span>
+              <span className="font-semibold text-gray-900 dark:text-white">It's your companion on the most important journey you'll ever take</span>
               —discovering who you truly are and what you're meant to contribute.
             </p>
           </div>
@@ -68,11 +68,11 @@ const Story = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-20" />
 
               {/* Phone mockup */}
-              <div className="relative bg-gray-900 rounded-[3rem] p-3 shadow-2xl">
+              <div className="relative bg-gray-900 dark:bg-gray-950 rounded-[3rem] p-3 shadow-2xl">
                 {/* Phone frame */}
-                <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-inner">
+                <div className="bg-white dark:bg-gray-800 rounded-[2.5rem] overflow-hidden shadow-inner">
                   {/* Status bar */}
-                  <div className="bg-gray-50 px-md py-3 flex items-center justify-between text-xs">
+                  <div className="bg-gray-50 dark:bg-gray-900 px-md py-3 flex items-center justify-between text-xs">
                     <span className="font-semibold">9:41</span>
                     <div className="flex items-center gap-1">
                       <div className="w-4 h-3 border border-gray-400 rounded-sm relative">
@@ -82,24 +82,24 @@ const Story = () => {
                   </div>
 
                   {/* Chat header */}
-                  <div className="px-md py-xs border-b border-gray-200">
+                  <div className="px-md py-xs border-b border-gray-200 dark:border-gray-700">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center">
-                        <Sparkles className="w-5 h-5 text-purple-600" />
+                      <div className="w-10 h-10 rounded-full bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center">
+                        <Sparkles className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-sm text-gray-900">Purpose Discovery</h3>
-                        <p className="text-xs text-purple-600 font-medium">Conversation 1 of 8</p>
+                        <h3 className="font-semibold text-sm text-gray-900 dark:text-white">Purpose Discovery</h3>
+                        <p className="text-xs text-purple-600 dark:text-purple-400 font-medium">Conversation 1 of 8</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Chat messages */}
-                  <div className="p-md space-y-xs bg-gradient-to-b from-purple-50/50 to-white min-h-[400px]">
+                  <div className="p-md space-y-xs bg-gradient-to-b from-purple-50/50 to-white dark:from-purple-950/30 dark:to-gray-800 min-h-[400px]">
                     {/* AI message 1 */}
                     <div className="flex">
-                      <div className="bg-purple-50 rounded-2xl rounded-tl-sm px-md py-xs shadow-sm max-w-[80%]">
-                        <p className="text-sm text-gray-800">
+                      <div className="bg-purple-50 dark:bg-purple-900/30 rounded-2xl rounded-tl-sm px-md py-xs shadow-sm max-w-[80%]">
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
                           Let's start with something meaningful. Tell me about a time when you felt most energized and alive.
                         </p>
                       </div>
@@ -107,8 +107,8 @@ const Story = () => {
 
                     {/* User message 1 */}
                     <div className="flex justify-end">
-                      <div className="bg-purple-200 rounded-2xl rounded-tr-sm px-md py-xs shadow-sm max-w-[80%]">
-                        <p className="text-sm text-gray-900">
+                      <div className="bg-purple-200 dark:bg-purple-700 rounded-2xl rounded-tr-sm px-md py-xs shadow-sm max-w-[80%]">
+                        <p className="text-sm text-gray-900 dark:text-white">
                           When I was teaching my nephew to code. Seeing his eyes light up when he finally understood...
                         </p>
                       </div>
@@ -116,8 +116,8 @@ const Story = () => {
 
                     {/* AI message 2 */}
                     <div className="flex">
-                      <div className="bg-purple-50 rounded-2xl rounded-tl-sm px-md py-xs shadow-sm max-w-[80%]">
-                        <p className="text-sm text-gray-800">
+                      <div className="bg-purple-50 dark:bg-purple-900/30 rounded-2xl rounded-tl-sm px-md py-xs shadow-sm max-w-[80%]">
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
                           That's beautiful. What was it about that moment that made you feel so alive?
                         </p>
                       </div>
@@ -125,8 +125,8 @@ const Story = () => {
 
                     {/* User message 2 */}
                     <div className="flex justify-end">
-                      <div className="bg-purple-200 rounded-2xl rounded-tr-sm px-md py-xs shadow-sm max-w-[80%]">
-                        <p className="text-sm text-gray-900">
+                      <div className="bg-purple-200 dark:bg-purple-700 rounded-2xl rounded-tr-sm px-md py-xs shadow-sm max-w-[80%]">
+                        <p className="text-sm text-gray-900 dark:text-white">
                           I realized I was making a real difference. Helping someone discover their potential.
                         </p>
                       </div>
@@ -134,11 +134,11 @@ const Story = () => {
 
                     {/* AI typing indicator */}
                     <div className="flex">
-                      <div className="bg-purple-50 rounded-2xl rounded-tl-sm px-md py-xs shadow-sm">
+                      <div className="bg-purple-50 dark:bg-purple-900/30 rounded-2xl rounded-tl-sm px-md py-xs shadow-sm">
                         <div className="flex gap-1">
-                          <div className="w-8 h-8 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
-                          <div className="w-8 h-8 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
-                          <div className="w-8 h-8 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
+                          <div className="w-8 h-8 bg-purple-400 dark:bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />
+                          <div className="w-8 h-8 bg-purple-400 dark:bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
+                          <div className="w-8 h-8 bg-purple-400 dark:bg-purple-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
                         </div>
                       </div>
                     </div>
@@ -154,14 +154,14 @@ const Story = () => {
               {journey.map((step, index) => (
                 <div
                   key={step.phase}
-                  className={`relative glass-card cursor-pointer transition-all duration-300 overflow-hidden ${
+                  className={`relative bg-[#F8F5FF] dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-800 hover:border-purple-300 dark:hover:border-purple-600 cursor-pointer transition-all duration-300 overflow-hidden hover:shadow-lg ${
                     activeIndex === index ? 'p-xl' : 'p-md'
                   }`}
                   onMouseEnter={() => setActiveIndex(index)}
                   onClick={() => setActiveIndex(index)}
                 >
                   {/* Gradient accent line */}
-                  <div className={`absolute top-0 left-0 h-full bg-gradient-to-b ${step.color} transition-all duration-300 ${
+                  <div className={`absolute top-0 left-0 h-full bg-gradient-to-b ${step.color} dark:hidden transition-all duration-300 ${
                     activeIndex === index ? 'w-8 opacity-100' : 'w-2 opacity-50'
                   }`} />
 
@@ -169,14 +169,14 @@ const Story = () => {
                     {/* Content */}
                     <div className="flex-1 min-w-0">
                       {/* Phase label */}
-                      <p className={`font-body text-body-xs font-semibold text-purple-600 uppercase tracking-wide mb-xs transition-opacity duration-300 ${
+                      <p className={`font-body text-body-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wide mb-xs transition-opacity duration-300 ${
                         activeIndex === index ? 'opacity-100' : 'opacity-70'
                       }`}>
                         {step.phase}
                       </p>
 
                       {/* Title */}
-                      <h3 className={`font-heading text-gray-900 font-bold transition-all duration-300 ${
+                      <h3 className={`font-heading text-gray-900 dark:text-white font-bold transition-all duration-300 ${
                         activeIndex === index ? 'text-body-lg lg:text-h5 mb-md' : 'text-body-md mb-0'
                       }`}>
                         {step.title}
@@ -188,7 +188,7 @@ const Story = () => {
                           activeIndex === index ? 'max-h-48 opacity-100 mt-md' : 'max-h-0 opacity-0'
                         }`}
                       >
-                        <p className="font-body text-body-md text-gray-700 leading-relaxed">
+                        <p className="font-body text-body-md text-gray-700 dark:text-gray-300 leading-relaxed">
                           {step.description}
                         </p>
                       </div>

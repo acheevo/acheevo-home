@@ -34,7 +34,8 @@
       "Bash(python3:*)",
       "Bash(lsof:*)",
       "Bash(find:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(git add:*)"
     ],
     "deny": []
   }

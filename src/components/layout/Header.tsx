@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { Container, Button } from '@/components/ui';
+import { Button } from '@/components/ui';
 import { APP_CONFIG } from '@/config/app';
 
 interface HeaderProps {
@@ -7,16 +6,6 @@ interface HeaderProps {
 }
 
 const Header = ({ className }: HeaderProps) => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <header className={`absolute top-0 left-0 right-0 z-50 ${className || ''}`}>

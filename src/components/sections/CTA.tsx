@@ -3,9 +3,9 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const CTA = () => {
   return (
-    <section className="relative p-[80px] overflow-hidden bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500">
+    <section className="relative p-[80px] overflow-hidden bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 dark:from-purple-800 dark:via-purple-700 dark:to-pink-700 transition-colors duration-300">
       {/* Enhanced background pattern - scattered dots */}
-      <div className="absolute inset-0 opacity-[0.15]">
+      <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(255, 255, 255) 1.5px, transparent 0)',
           backgroundSize: '48px 48px'
@@ -13,7 +13,7 @@ const CTA = () => {
       </div>
 
       {/* Gentle wavy lines pattern */}
-      <div className="absolute inset-0 opacity-[0.08]">
+      <div className="absolute inset-0 opacity-[0.08] dark:opacity-[0.05]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="wave-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">

@@ -1,5 +1,4 @@
 import { Container, ScrollReveal, Button } from '@/components/ui';
-import { ArrowRight } from 'lucide-react';
 
 const Features = () => {
   const features = [
@@ -27,9 +26,9 @@ const Features = () => {
   ];
 
   return (
-    <section id="how-it-works" className="relative p-[80px] bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
+    <section id="how-it-works" className="relative p-[80px] bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden transition-colors duration-300">
       {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 dark:opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(162, 89, 251) 1px, transparent 0)',
           backgroundSize: '48px 48px'
@@ -45,13 +44,13 @@ const Features = () => {
             </p>
           </ScrollReveal>
           <ScrollReveal animation="slide-up" delay={100}>
-            <h2 className="font-heading text-h4 lg:text-h3 text-heading mb-sm font-bold leading-tight">
+            <h2 className="font-heading text-h4 lg:text-h3 text-heading dark:text-white mb-sm font-bold leading-tight">
               How it{' '}
               <span className="gradient-text">works</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal animation="slide-up" delay={200}>
-            <p className="font-body text-body-xl text-body leading-relaxed font-light max-w-2xl mx-auto">
+            <p className="font-body text-body-xl text-body dark:text-gray-300 leading-relaxed font-light max-w-2xl mx-auto">
               We'll guide you through eight conversations designed to help you understand yourself better.
             </p>
           </ScrollReveal>
@@ -66,13 +65,13 @@ const Features = () => {
               delay={index * 150}
               threshold={0.2}
             >
-              <div className="group bg-[#F8F5FF] rounded-2xl border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 hover:shadow-lg">
+              <div className="group bg-[#F8F5FF] dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-800 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 hover:shadow-lg">
                 {/* Content - with padding to create space */}
                 <div className="p-lg">
-                  <p className="font-heading text-h6 text-purple-700 mb-md font-bold text-left">
+                  <p className="font-heading text-h6 text-purple-700 dark:text-purple-400 mb-md font-bold text-left">
                     {feature.step}. {feature.title}
                   </p>
-                  <p className="font-body text-body-md text-body leading-relaxed text-left">
+                  <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed text-left">
                     {feature.description}
                   </p>
                 </div>
@@ -83,8 +82,8 @@ const Features = () => {
 
         {/* CTA section */}
         <ScrollReveal animation="fade-in" delay={500}>
-          <div className="text-center mt-3xl pt-xl border-t border-neutral-200 max-w-2xl mx-auto">
-            <p className="font-body text-body-lg text-body mb-md">
+          <div className="text-center mt-3xl pt-xl border-t border-neutral-200 dark:border-gray-700 max-w-2xl mx-auto">
+            <p className="font-body text-body-lg text-body dark:text-gray-300 mb-md">
               Ready to start conversation #1?
             </p>
             <Button
@@ -95,7 +94,7 @@ const Features = () => {
             >
               Begin for Free
             </Button>
-            <p className="font-body text-body-sm text-neutral-500 mt-md">
+            <p className="font-body text-body-sm text-neutral-500 dark:text-gray-400 mt-md">
               Free during beta
             </p>
           </div>

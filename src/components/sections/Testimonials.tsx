@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { CheckCircle2, Star } from 'lucide-react';
 import Container from '@/components/ui/Container';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -81,29 +81,29 @@ const Testimonials: FC = () => {
   const featuredTestimonial = testimonials[0]; // Always show first testimonial
 
   return (
-    <section id="testimonials" className="relative p-[80px] bg-white overflow-hidden">
+    <section id="testimonials" className="relative p-[80px] bg-white dark:bg-gray-900 overflow-hidden transition-colors duration-300">
       {/* Subtle gradient mesh background */}
-      <div className="absolute inset-0 gradient-mesh opacity-20 pointer-events-none"></div>
+      <div className="absolute inset-0 gradient-mesh opacity-20 dark:opacity-10 pointer-events-none"></div>
 
       <Container className="relative z-10">
         {/* Section Header */}
         <div className="text-center mb-2xl">
           <ScrollReveal animation="slide-up">
-            <h2 className="text-h4 lg:text-h3 font-bold text-neutral-900 mb-sm">
+            <h2 className="text-h4 lg:text-h3 font-bold text-neutral-900 dark:text-white mb-sm">
               What people are{' '}
               <span className="gradient-text">saying</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal animation="slide-up" delay={100}>
-            <p className="text-body-lg text-neutral-600 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-body-lg text-neutral-600 dark:text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
               These are real people who've been through the process. Here's what stuck with them.
             </p>
           </ScrollReveal>
 
           {/* Trust indicator */}
           <ScrollReveal animation="fade-in" delay={200}>
-            <div className="mt-sm flex items-center justify-center gap-3xs text-neutral-600">
-              <CheckCircle2 className="w-5 h-5 text-green-600 pulse-ring" />
+            <div className="mt-sm flex items-center justify-center gap-3xs text-neutral-600 dark:text-gray-400">
+              <CheckCircle2 className="w-5 h-5 text-green-600 dark:text-green-400 pulse-ring" />
               <span className="text-sm font-medium">
                 From people who completed all 8 conversations
               </span>
@@ -113,9 +113,9 @@ const Testimonials: FC = () => {
 
         {/* Featured Testimonial - Full Width Hero */}
         <ScrollReveal animation="fade-in" delay={300}>
-          <div className="mb-2xl bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-2xl relative overflow-hidden">
+          <div className="mb-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950/30 dark:to-pink-950/30 rounded-3xl p-2xl relative overflow-hidden">
             {/* Decorative gradient */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200 to-pink-200 rounded-full blur-3xl opacity-30" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-purple-200 to-pink-200 dark:from-purple-900 dark:to-pink-900 rounded-full blur-3xl opacity-30 dark:opacity-20" />
 
             <div className="relative z-10 max-w-4xl mx-auto">
               {/* Star Rating */}
@@ -127,7 +127,7 @@ const Testimonials: FC = () => {
 
               {/* Quote Text - Large and Prominent */}
               <blockquote className="text-center mb-xl">
-                <p className="text-2xl lg:text-3xl text-neutral-900 leading-relaxed font-light italic">
+                <p className="text-2xl lg:text-3xl text-neutral-900 dark:text-white leading-relaxed font-light italic">
                   "{featuredTestimonial.quote}"
                 </p>
               </blockquote>
@@ -138,20 +138,20 @@ const Testimonials: FC = () => {
                   <img
                     src={featuredTestimonial.avatar}
                     alt={featuredTestimonial.name}
-                    className="w-20 h-20 rounded-full object-cover ring-4 ring-white shadow-lg"
+                    className="w-20 h-20 rounded-full object-cover ring-4 ring-white dark:ring-gray-800 shadow-lg"
                   />
                   {featuredTestimonial.verified && (
-                    <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-1 ring-4 ring-white">
+                    <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-1 ring-4 ring-white dark:ring-gray-800">
                       <CheckCircle2 className="w-5 h-5 text-white" />
                     </div>
                   )}
                 </div>
 
                 <div className="text-center">
-                  <p className="font-bold text-h5 text-neutral-900 mb-xs">
+                  <p className="font-bold text-h5 text-neutral-900 dark:text-white mb-xs">
                     {featuredTestimonial.name}
                   </p>
-                  <p className="text-body-sm text-neutral-500">
+                  <p className="text-body-sm text-neutral-500 dark:text-gray-400">
                     {featuredTestimonial.sessions} conversations • {featuredTestimonial.date}
                   </p>
                 </div>
@@ -159,7 +159,7 @@ const Testimonials: FC = () => {
                 {/* Read Full Story Link */}
                 <a
                   href="#"
-                  className="mt-lg inline-flex items-center gap-2xs text-body-md font-semibold text-purple-600 hover:text-purple-700 transition-colors group"
+                  className="mt-lg inline-flex items-center gap-2xs text-body-md font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors group"
                 >
                   Read full story
                   <svg

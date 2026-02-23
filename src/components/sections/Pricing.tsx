@@ -25,17 +25,17 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="p-[80px] bg-gradient-to-b from-white to-neutral-100">
+    <section id="pricing" className="p-[80px] bg-gradient-to-b from-white to-neutral-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
       <Container>
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-xl">
           <ScrollReveal animation="fade-in">
-            <h2 className="text-h4 lg:text-h3 font-bold text-neutral-900 mb-sm">
+            <h2 className="text-h4 lg:text-h3 font-bold text-neutral-900 dark:text-white mb-sm">
               Simple, <span className="gradient-text">Transparent Pricing</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal animation="fade-in" delay={100}>
-            <p className="text-body-lg text-neutral-600 font-light">
+            <p className="text-body-lg text-neutral-600 dark:text-gray-300 font-light">
               Free now. Affordable later.
             </p>
           </ScrollReveal>
@@ -45,7 +45,7 @@ const Pricing = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-lg max-w-5xl mx-auto mb-xl">
           {/* Left Card - Beta (Current) */}
           <ScrollReveal animation="slide-up" delay={200}>
-            <div className="relative glass-purple transition-all duration-300 p-lg space-y-md overflow-hidden shadow-elevated hover:shadow-elevated-lg transform hover:-translate-y-1 border-4 border-purple-500">
+            <div className="relative glass-purple dark:bg-gray-800 dark:border-purple-700 transition-all duration-300 p-lg space-y-md overflow-hidden shadow-elevated hover:shadow-elevated-lg transform hover:-translate-y-1 border-4 border-purple-500 dark:border-purple-600">
               {/* "Current" Badge */}
               <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-purple-500 text-white px-lg py-xs rounded-bl-2xl font-semibold text-body-sm">
                 Current
@@ -55,24 +55,24 @@ const Pricing = () => {
               <div className="absolute top-0 left-0 right-0 h-1 gradient-primary"></div>
 
               {/* Subtle gradient mesh background */}
-              <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none"></div>
+              <div className="absolute inset-0 gradient-mesh opacity-30 dark:opacity-20 pointer-events-none"></div>
 
               {/* Tier label */}
               <div className="relative z-10 text-center pt-md">
-                <h3 className="text-h5 font-bold text-neutral-900 mb-xs">
+                <h3 className="text-h5 font-bold text-neutral-900 dark:text-white mb-xs">
                   Beta Access
                 </h3>
-                <p className="text-body-md text-neutral-600">
+                <p className="text-body-md text-neutral-600 dark:text-gray-400">
                   Free while in beta
                 </p>
               </div>
 
               {/* Price */}
-              <div className="text-center pb-md border-b border-neutral-200 relative z-10">
+              <div className="text-center pb-md border-b border-neutral-200 dark:border-gray-700 relative z-10">
                 <div className="text-h1 font-bold gradient-text mb-xs">
                   Free
                 </div>
-                <p className="text-neutral-600 text-body-md">
+                <p className="text-neutral-600 dark:text-gray-400 text-body-md">
                   Limited time offer
                 </p>
               </div>
@@ -80,24 +80,24 @@ const Pricing = () => {
               {/* Features */}
               <ul className="space-y-sm relative z-10">
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 text-body-md">8 guided conversations</span>
+                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">8 guided conversations</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 text-body-md">Save and export your insights</span>
+                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">Save and export your insights</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 text-body-md">Come back anytime</span>
+                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">Come back anytime</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 text-body-md">Cancel whenever</span>
+                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">Cancel whenever</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 text-body-md">All future updates included</span>
+                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">All future updates included</span>
                 </li>
               </ul>
 
@@ -111,7 +111,7 @@ const Pricing = () => {
                 >
                   Begin for Free
                 </Button>
-                <p className="text-center text-body-sm text-neutral-600">
+                <p className="text-center text-body-sm text-neutral-600 dark:text-gray-400">
                   No email required to start
                 </p>
               </div>
@@ -120,7 +120,7 @@ const Pricing = () => {
 
           {/* Right Card - After Beta */}
           <ScrollReveal animation="slide-up" delay={300}>
-            <div className="relative bg-white transition-all duration-300 p-lg space-y-md overflow-hidden shadow-card rounded-3xl border-2 border-neutral-200 opacity-75">
+            <div className="relative bg-white dark:bg-gray-800 transition-all duration-300 p-lg space-y-md overflow-hidden shadow-card rounded-3xl border-2 border-neutral-200 dark:border-gray-700 opacity-75">
               {/* "Coming Soon" Badge */}
               <div className="absolute top-0 right-0 bg-gradient-to-r from-neutral-400 to-neutral-300 text-white px-lg py-xs rounded-bl-2xl font-semibold text-body-sm">
                 Coming Soon
@@ -128,21 +128,21 @@ const Pricing = () => {
 
               {/* Tier label */}
               <div className="relative z-10 text-center pt-md">
-                <h3 className="text-h5 font-bold text-neutral-700 mb-xs">
+                <h3 className="text-h5 font-bold text-neutral-700 dark:text-gray-300 mb-xs">
                   After Beta
                 </h3>
-                <p className="text-body-md text-neutral-500">
+                <p className="text-body-md text-neutral-500 dark:text-gray-400">
                   When beta ends
                 </p>
               </div>
 
               {/* Price */}
-              <div className="text-center pb-md border-b border-neutral-200 relative z-10">
-                <div className="text-h1 font-bold text-neutral-700 mb-xs">
+              <div className="text-center pb-md border-b border-neutral-200 dark:border-gray-700 relative z-10">
+                <div className="text-h1 font-bold text-neutral-700 dark:text-gray-300 mb-xs">
                   €15
-                  <span className="text-h5 text-neutral-500 font-normal">/month</span>
+                  <span className="text-h5 text-neutral-500 dark:text-gray-400 font-normal">/month</span>
                 </div>
-                <p className="text-neutral-500 text-body-md">
+                <p className="text-neutral-500 dark:text-gray-400 text-body-md">
                   Simple monthly pricing
                 </p>
               </div>
@@ -150,24 +150,24 @@ const Pricing = () => {
               {/* Features */}
               <ul className="space-y-sm relative z-10">
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 text-body-md">8 guided conversations</span>
+                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">8 guided conversations</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 text-body-md">Save and export your insights</span>
+                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Save and export your insights</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 text-body-md">Come back anytime</span>
+                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Come back anytime</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 text-body-md">Cancel whenever</span>
+                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Cancel whenever</span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 text-body-md">All future updates included</span>
+                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">All future updates included</span>
                 </li>
               </ul>
 
@@ -175,13 +175,13 @@ const Pricing = () => {
               <div className="relative z-10 space-y-xs pt-md">
                 <Button
                   size="lg"
-                  className="w-full bg-neutral-300 text-neutral-600 cursor-not-allowed hover:bg-neutral-300"
+                  className="w-full bg-neutral-300 dark:bg-gray-700 text-neutral-600 dark:text-gray-400 cursor-not-allowed hover:bg-neutral-300 dark:hover:bg-gray-700"
                   disabled
                   aria-label="Not available during beta"
                 >
                   Not Available Yet
                 </Button>
-                <p className="text-center text-body-sm text-neutral-500">
+                <p className="text-center text-body-sm text-neutral-500 dark:text-gray-400">
                   Start with free beta access
                 </p>
               </div>
@@ -192,7 +192,7 @@ const Pricing = () => {
         {/* FAQ Section */}
         <div className="max-w-3xl mx-auto">
           <ScrollReveal animation="fade-in" delay={400}>
-            <h3 className="text-h5 lg:text-h4 font-bold text-neutral-900 text-center mb-xl">
+            <h3 className="text-h5 lg:text-h4 font-bold text-neutral-900 dark:text-white text-center mb-xl">
               Frequently Asked Questions
             </h3>
           </ScrollReveal>
@@ -200,17 +200,17 @@ const Pricing = () => {
           <div className="space-y-sm">
             {faqs.map((faq, index) => (
               <ScrollReveal key={index} animation="slide-up" delay={450 + index * 50}>
-                <div className="bg-white rounded-2xl shadow-soft overflow-hidden border border-neutral-200">
+                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-soft overflow-hidden border border-neutral-200 dark:border-gray-700">
                   <button
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full px-xl py-lg flex items-center justify-between text-left hover:bg-neutral-50 transition-colors"
+                    className="w-full px-xl py-lg flex items-center justify-between text-left hover:bg-neutral-50 dark:hover:bg-gray-700/50 transition-colors"
                     aria-expanded={openFaq === index}
                   >
-                    <span className="font-heading text-body-lg font-semibold text-neutral-900 pr-md">
+                    <span className="font-heading text-body-lg font-semibold text-neutral-900 dark:text-white pr-md">
                       {faq.question}
                     </span>
                     <ChevronDown
-                      className={`w-6 h-6 text-neutral-500 flex-shrink-0 transition-transform duration-300 ${
+                      className={`w-6 h-6 text-neutral-500 dark:text-gray-400 flex-shrink-0 transition-transform duration-300 ${
                         openFaq === index ? 'rotate-180' : ''
                       }`}
                     />
@@ -221,7 +221,7 @@ const Pricing = () => {
                     }`}
                   >
                     <div className="px-xl pb-lg pt-xs">
-                      <p className="text-body-md text-neutral-600 leading-relaxed">
+                      <p className="text-body-md text-neutral-600 dark:text-gray-300 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>

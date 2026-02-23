@@ -1,13 +1,13 @@
-import { Button } from '@/components/ui';
+import { Button, DarkModeToggle } from '@/components/ui';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { APP_CONFIG } from '@/config/app';
 
 const Hero = () => {
   return (
-    <section className="relative h-[90vh] bg-white flex items-center justify-center overflow-hidden p-sm">
+    <section className="relative h-[90vh] bg-white dark:bg-gray-900 flex items-center justify-center overflow-hidden p-sm transition-colors duration-300">
       <div className="relative z-10 w-full h-full">
         {/* Hero container with rounded corners and mountain background */}
-        <div className="relative rounded-3xl overflow-hidden h-full flex flex-col">
+        <div className="relative rounded-3xl overflow-hidden h-full flex flex-col dark:bg-gray-800">
           {/* Mountain background image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -16,9 +16,9 @@ const Hero = () => {
             }}
           >
             {/* Gradient overlay for readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-900/65 via-purple-800/55 to-purple-900/75" />
-            <div className="absolute inset-0 bg-purple-600/25 mix-blend-multiply" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-purple-900/23 via-purple-800/19 to-purple-900/26 dark:from-purple-950/40 dark:via-purple-900/35 dark:to-purple-950/45" />
+            <div className="absolute inset-0 bg-purple-600/25 mix-blend-multiply dark:bg-purple-800/35" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent dark:from-black/60" />
           </div>
 
           {/* Soft ambient light effect */}
@@ -74,6 +74,7 @@ const Hero = () => {
 
               {/* Section 3: CTAs - Right aligned */}
               <div className="hidden md:flex items-center justify-end gap-md">
+                <DarkModeToggle />
                 <button
                   className="font-body text-body-md text-white/90 hover:text-white transition-colors font-medium"
                   aria-label="Sign in to your account"
