@@ -51,12 +51,12 @@ const CTA = () => {
             <div className="flex-1 text-center md:text-left">
               <ScrollReveal animation="slide-up">
                 <h2 className="font-heading text-h3 lg:text-h2 text-white leading-tight mb-lg font-bold" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.2)' }}>
-                  Ready to discover your purpose?
+                  The most important conversation you'll have this year is the first one.
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="slide-up" delay={100}>
                 <p className="font-body text-body-lg lg:text-body-xl text-white/95 leading-relaxed font-light" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
-                  Join 10,000+ people who've found clarity through meaningful conversation.
+                  Start free. No email required. See what surfaces in just 15 minutes.
                 </p>
               </ScrollReveal>
             </div>
@@ -77,18 +77,23 @@ const CTA = () => {
                       paddingRight: '40px',
                       fontSize: '18px'
                     }}
-                    aria-label="Start your purpose discovery journey for free"
+                    aria-label="Start your first purpose discovery conversation for free"
                   >
-                    Begin for Free
+                    Start Conversation #1 — Free
                   </Button>
 
                   {/* Trust note positioned to the right */}
-                  <div className="flex items-center gap-xs">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-white font-medium text-body-md" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)' }}>
-                      Free • No credit card required
+                  <div className="flex flex-col items-center md:items-end gap-xs text-center md:text-right">
+                    <div className="flex items-center gap-xs">
+                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-white font-medium text-body-md" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)' }}>
+                        Free • No email required
+                      </span>
+                    </div>
+                    <span className="text-white/90 text-body-sm font-light" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)' }}>
+                      Your data is private and never shared
                     </span>
                   </div>
                 </div>

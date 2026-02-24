@@ -1,25 +1,26 @@
 import { Container, ScrollReveal, Button } from '@/components/ui';
+import ConversationsBreakdown from './ConversationsBreakdown';
 
 const Features = () => {
   const features = [
     {
       step: 1,
-      title: "Start talking",
-      description: "We ask questions. Simple at first, then deeper. Just a conversation that adapts to you.",
+      title: "Tell your story",
+      description: "No forms, no surveys. Just you talking about your experiences—the highs, the lows, what matters. We listen and ask what comes next.",
       imageSrc: "/images/feature-conversation.svg",
       imageAlt: "Conversation illustration",
     },
     {
       step: 2,
-      title: "See the patterns",
-      description: "Themes will emerge—what you value, what energizes you. We'll help you see the connections.",
+      title: "Watch the patterns surface",
+      description: "As you talk, Acheevo holds the thread. You'll start to see what energizes you, what drains you, and where your strengths actually lie.",
       imageSrc: "/images/feature-discovery.svg",
       imageAlt: "Discovery illustration",
     },
     {
       step: 3,
-      title: "Know what's next",
-      description: "You'll leave with clear direction. Not vague advice—specific next steps you can take.",
+      title: "Walk away with a roadmap",
+      description: "After eight conversations, you'll have a Purpose Summary—not a personality type or vague insight, but a clear statement of what you're here to do and how to move toward it.",
       imageSrc: "/images/feature-roadmap.svg",
       imageAlt: "Roadmap illustration",
     },
@@ -51,13 +52,13 @@ const Features = () => {
           </ScrollReveal>
           <ScrollReveal animation="slide-up" delay={200}>
             <p className="font-body text-body-xl text-body dark:text-gray-300 leading-relaxed font-light max-w-2xl mx-auto">
-              We'll guide you through eight conversations designed to help you understand yourself better.
+              Eight conversations, each building on the last. Here's what happens.
             </p>
           </ScrollReveal>
         </div>
 
         {/* Three-column card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-lg max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-lg max-w-6xl mx-auto mb-3xl">
           {features.map((feature, index) => (
             <ScrollReveal
               key={feature.step}
@@ -79,20 +80,25 @@ const Features = () => {
             </ScrollReveal>
           ))}
         </div>
+      </Container>
 
+      {/* 8 Conversations Breakdown Section */}
+      <ConversationsBreakdown />
+
+      <Container className="relative z-10">
         {/* CTA section */}
         <ScrollReveal animation="fade-in" delay={500}>
           <div className="text-center mt-3xl pt-xl border-t border-neutral-200 dark:border-gray-700 max-w-2xl mx-auto">
             <p className="font-body text-body-lg text-body dark:text-gray-300 mb-md">
-              Ready to start conversation #1?
+              Ready to see what surfaces?
             </p>
             <Button
               variant="gradient"
               size="lg"
               className="hover:shadow-glow"
-              aria-label="Start your first conversation now"
+              aria-label="Start your first conversation"
             >
-              Begin for Free
+              Start Now — No Sign-Up Needed
             </Button>
             <p className="font-body text-body-sm text-neutral-500 dark:text-gray-400 mt-md">
               Free during beta

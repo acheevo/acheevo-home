@@ -35,7 +35,9 @@
       "Bash(lsof:*)",
       "Bash(find:*)",
       "Bash(done)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd complete dark mode system with toggle and UI refinements\n\nMajor features:\n- Implement full dark mode support across all sections\n- Add dark mode toggle with sun/moon icons in navigation\n- Create DarkModeContext for state management\n- Add localStorage persistence and system preference detection\n- Fix FOUC with inline script in index.html\n\nUI improvements:\n- Refine Features section cards \\(equal heights, cleaner layout\\)\n- Update TrustSignals stats \\(simplified numbers, consistent styling\\)\n- Improve Story section cards \\(match Features card styling in dark mode\\)\n- Standardize trust badges as individual pills\n- Adjust Hero gradient overlay \\(reduced to 35% opacity\\)\n\nTechnical updates:\n- Configure Tailwind with class-based dark mode strategy\n- Add dark variants to all components\n- Ensure WCAG AA contrast compliance\n- Implement smooth color transitions\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(head:*)"
     ],
     "deny": []
   }

@@ -8,25 +8,25 @@ const Story = () => {
   const journey = [
     {
       icon: Heart,
-      phase: "You're not alone",
-      title: "Feeling stuck or uncertain?",
-      description: "That nagging feeling that something's missing. The Sunday night anxiety about Monday morning. The daydreams about 'what if I had chosen differently?' We see you, and we understand.",
+      phase: "HOW IT FEELS",
+      title: "Like talking to someone who really gets it",
+      description: "No generic advice. No pre-written responses. Acheevo adapts to your answers in real time, asking follow-up questions that feel personal—because they are. You'll feel heard, not processed.",
       emotion: "recognition",
       color: "from-rose-500 to-pink-500",
     },
     {
       icon: Compass,
-      phase: "There's a path forward",
-      title: "Clarity is closer than you think",
-      description: "You don't need years of therapy or expensive retreats. Through guided conversation, you'll rediscover what truly matters to you—not what society expects, but what lights you up inside.",
+      phase: "WHAT MAKES IT DIFFERENT",
+      title: "It actually remembers what you say",
+      description: "Every session builds on the last. Your insights, patterns, and breakthroughs are tracked and referenced throughout the journey. By the end, you'll have a living document of self-discovery—not just vague inspiration.",
       emotion: "hope",
       color: "from-purple-500 to-indigo-500",
     },
     {
       icon: Sparkles,
-      phase: "Your transformation awaits",
-      title: "Imagine waking up with purpose",
-      description: "Picture yourself six months from now: energized by your work, aligned with your values, finally living the life you were meant for. That version of you? They're already inside you, waiting to emerge.",
+      phase: "WHO IT'S FOR",
+      title: "People ready to do the inner work",
+      description: "This isn't passive content consumption. Acheevo works best for people willing to reflect honestly, sit with discomfort, and take their answers seriously. If you're tired of surface-level advice and ready for real self-discovery, you're in the right place.",
       emotion: "inspiration",
       color: "from-amber-500 to-orange-500",
     },
@@ -45,16 +45,13 @@ const Story = () => {
         <ScrollReveal animation="fade-in">
           <div className="text-center max-w-3xl mx-auto mb-2xl">
             <p className="eyebrow mb-md">
-              YOUR JOURNEY STARTS HERE
+              WHAT ACHEEVO ACTUALLY DOES
             </p>
             <h2 className="font-heading text-h4 lg:text-h3 text-gray-900 dark:text-white mb-lg font-bold leading-tight">
-              We believe everyone deserves to live with{' '}
-              <span className="gradient-text">purpose</span>
+              Not a quiz. Not a course. A real conversation.
             </h2>
             <p className="font-body text-body-lg text-gray-600 dark:text-gray-300 leading-relaxed font-light">
-              This isn't just another productivity tool or self-help program.{' '}
-              <span className="font-semibold text-gray-900 dark:text-white">It's your companion on the most important journey you'll ever take</span>
-              —discovering who you truly are and what you're meant to contribute.
+              Acheevo guides you through 8 structured conversations with an AI coach designed to help you reflect deeply, connect the dots, and walk away with a personal roadmap. It's like journaling—but smarter, faster, and designed to actually get you somewhere.
             </p>
           </div>
         </ScrollReveal>
@@ -185,7 +182,7 @@ const Story = () => {
                       {/* Description - only shown when active */}
                       <div
                         className={`transition-all duration-300 overflow-hidden ${
-                          activeIndex === index ? 'max-h-48 opacity-100 mt-md' : 'max-h-0 opacity-0'
+                          activeIndex === index ? 'max-h-96 opacity-100 mt-md' : 'max-h-0 opacity-0'
                         }`}
                       >
                         <p className="font-body text-body-md text-gray-700 dark:text-gray-300 leading-relaxed">

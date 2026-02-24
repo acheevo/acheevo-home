@@ -18,11 +18,10 @@ const TrustSignals = () => {
         <ScrollReveal animation="fade-in">
           <div className="text-center mb-3xl">
             <h2 className="font-heading text-h4 lg:text-h3 text-gray-900 dark:text-white mb-sm font-semibold">
-              Trusted by <span className="gradient-text">thousands</span> on their journey
+              The numbers speak for themselves
             </h2>
             <p className="font-body text-body-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
-              Join a growing community of people who've discovered their purpose and{' '}
-              <span className="font-semibold text-gray-900 dark:text-white">transformed their lives</span>
+              Real outcomes from real people — tracked since we launched.
             </p>
           </div>
         </ScrollReveal>
@@ -37,7 +36,7 @@ const TrustSignals = () => {
                     10k
                   </div>
                   <div className="font-heading text-body-md font-semibold text-gray-900 dark:text-white mb-2xs">
-                    Lives Transformed
+                    People have started their journey
                   </div>
                   <p className="font-body text-body-sm text-gray-600 dark:text-gray-400">
                     &nbsp;
@@ -68,7 +67,7 @@ const TrustSignals = () => {
                   <div className="flex items-center justify-center gap-xs">
                     <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" strokeWidth={2.5} />
                     <p className="font-body text-body-sm text-gray-600 dark:text-gray-400">
-                      From verified users
+                      From 890 reviews
                     </p>
                   </div>
                 </div>
@@ -80,10 +79,10 @@ const TrustSignals = () => {
                       92%
                     </div>
                     <div className="font-heading text-body-md font-semibold text-purple-100 mb-2xs">
-                      Success Rate
+                      Report feeling clearer
                     </div>
                     <p className="font-body text-body-sm text-purple-200">
-                      Find clarity in 1-3 sessions
+                      After just 3 sessions
                     </p>
                   </div>
                 </div>

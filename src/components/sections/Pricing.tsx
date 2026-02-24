@@ -7,6 +7,18 @@ const Pricing = () => {
 
   const faqs = [
     {
+      question: "How is Acheevo different from ChatGPT?",
+      answer: "ChatGPT is a general-purpose assistant that responds to whatever you ask. Acheevo is specifically designed for purpose discovery with a structured framework of 8 conversations that build on each other. It knows what questions to ask, when to dig deeper, and how to help you connect insights across conversations. Think of ChatGPT as a blank page—Acheevo is a guided journey with a clear destination."
+    },
+    {
+      question: "How long does each session take?",
+      answer: "Each conversation takes 15-30 minutes, but you can go at your own pace. Some people complete one per day, others prefer one per week. There's no rush—the platform saves your progress automatically, and you can pause and resume whenever you like. Most people complete all 8 conversations within 4-8 weeks."
+    },
+    {
+      question: "Do I need to be in crisis to use Acheevo?",
+      answer: "Not at all! Acheevo is for anyone seeking clarity, whether you're facing a major life decision, feeling stuck in your career, or simply curious about your purpose. You don't need to be in crisis—you just need to be ready for honest reflection. Many users come to Acheevo during calm periods to gain clarity before the next chapter of their life."
+    },
+    {
       question: "What happens when beta ends?",
       answer: "When the beta period ends, you'll have the option to continue with a paid subscription at €15/month. You'll be notified well in advance, and all your conversation history and insights will be preserved. If you choose not to continue, you can export all your data before the transition."
     },
@@ -19,8 +31,8 @@ const Pricing = () => {
       answer: "Yes, your privacy is our top priority. Your conversations and insights are encrypted and stored securely. We never share your personal data with third parties, and you have full control over your information. You can delete your data at any time."
     },
     {
-      question: "What's included in the subscription?",
-      answer: "Your subscription includes unlimited access to all 8 guided conversations, the ability to revisit and refine your answers, export your insights in multiple formats, and future updates and improvements to the platform. We're constantly adding new features based on user feedback."
+      question: "How does Acheevo use AI?",
+      answer: "Acheevo's conversations are powered by AI. Your responses are not used to train AI models. You can delete your data at any time. We believe in full transparency about how our technology works and how your information is handled."
     }
   ];
 
@@ -36,7 +48,7 @@ const Pricing = () => {
           </ScrollReveal>
           <ScrollReveal animation="fade-in" delay={100}>
             <p className="text-body-lg text-neutral-600 dark:text-gray-300 font-light">
-              Free now. Affordable later.
+              Try the full experience free during beta. No credit card, no catch.
             </p>
           </ScrollReveal>
         </div>
@@ -63,7 +75,7 @@ const Pricing = () => {
                   Beta Access
                 </h3>
                 <p className="text-body-md text-neutral-600 dark:text-gray-400">
-                  Free while in beta
+                  Full access, completely free — while it lasts
                 </p>
               </div>
 
@@ -72,9 +84,12 @@ const Pricing = () => {
                 <div className="text-h1 font-bold gradient-text mb-xs">
                   Free
                 </div>
-                <p className="text-neutral-600 dark:text-gray-400 text-body-md">
-                  Limited time offer
-                </p>
+                <div className="flex items-center justify-center gap-xs">
+                  <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
+                  <p className="text-orange-600 dark:text-orange-400 text-body-sm font-semibold">
+                    Beta ending soon
+                  </p>
+                </div>
               </div>
 
               {/* Features */}
@@ -93,10 +108,6 @@ const Pricing = () => {
                 </li>
                 <li className="flex items-start">
                   <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">Cancel whenever</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
                   <span className="text-neutral-700 dark:text-gray-300 text-body-md">All future updates included</span>
                 </li>
               </ul>
@@ -107,9 +118,9 @@ const Pricing = () => {
                   variant="gradient"
                   size="lg"
                   className="w-full"
-                  aria-label="Start your 8-conversation journey for free"
+                  aria-label="Claim your free access before beta ends"
                 >
-                  Begin for Free
+                  Claim My Free Access
                 </Button>
                 <p className="text-center text-body-sm text-neutral-600 dark:text-gray-400">
                   No email required to start
@@ -151,38 +162,45 @@ const Pricing = () => {
               <ul className="space-y-sm relative z-10">
                 <li className="flex items-start">
                   <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">8 guided conversations</span>
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Everything in Beta, plus:</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Save and export your insights</span>
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Priority support and coaching</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Come back anytime</span>
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Advanced analytics and tracking</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Cancel whenever</span>
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Quarterly purpose check-ins</span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">All future updates included</span>
+                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Early access to new features</span>
                 </li>
               </ul>
 
-              {/* CTA - Disabled state */}
+              {/* CTA - Email Capture */}
               <div className="relative z-10 space-y-xs pt-md">
-                <Button
-                  size="lg"
-                  className="w-full bg-neutral-300 dark:bg-gray-700 text-neutral-600 dark:text-gray-400 cursor-not-allowed hover:bg-neutral-300 dark:hover:bg-gray-700"
-                  disabled
-                  aria-label="Not available during beta"
-                >
-                  Not Available Yet
-                </Button>
+                <div className="flex gap-xs">
+                  <input
+                    type="email"
+                    placeholder="Your email"
+                    className="flex-1 px-md py-sm rounded-lg border-2 border-neutral-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-gray-500 focus:outline-none focus:border-purple-500 dark:focus:border-purple-400 transition-colors"
+                    aria-label="Email address for paid tier updates"
+                  />
+                  <Button
+                    size="md"
+                    className="bg-neutral-700 dark:bg-gray-600 text-white hover:bg-neutral-800 dark:hover:bg-gray-500 transition-colors whitespace-nowrap"
+                    aria-label="Get notified when paid tier launches"
+                  >
+                    Notify Me
+                  </Button>
+                </div>
                 <p className="text-center text-body-sm text-neutral-500 dark:text-gray-400">
-                  Start with free beta access
+                  Get notified when it launches
                 </p>
               </div>
             </div>

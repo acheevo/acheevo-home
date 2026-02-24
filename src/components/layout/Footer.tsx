@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { APP_CONFIG } from '@/config/app';
 import { Twitter, Instagram, Linkedin, Mail, Lock, Shield, Heart } from 'lucide-react';
 
@@ -49,22 +50,22 @@ const Footer = () => {
               <h4 className="font-heading text-body-md text-heading dark:text-white font-semibold mb-md">Resources</h4>
               <ul className="space-y-sm">
                 <li>
-                  <a href="#" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
+                  <Link to="/about" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
                     About Us
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#how-it-works" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
+                  <a href="/#features" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
                     How It Works
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    Blog
+                  <a href="mailto:hello@acheevo.com" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
+                    Contact
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
+                  <a href="/#faq" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
                     FAQ
                   </a>
                 </li>
@@ -76,19 +77,19 @@ const Footer = () => {
               <h4 className="font-heading text-body-md text-heading dark:text-white font-semibold mb-md">Legal</h4>
               <ul className="space-y-sm">
                 <li>
-                  <a href="#" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
+                  <Link to="/privacy" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
                     Privacy Policy
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
+                  <Link to="/terms" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
                     Terms of Service
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
+                  <Link to="/cookies" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
                     Cookie Policy
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -98,28 +99,34 @@ const Footer = () => {
               <h4 className="font-heading text-body-md text-heading dark:text-white font-semibold mb-md">Connect</h4>
               <div className="flex gap-sm">
                 <a
-                  href="#"
+                  href="https://twitter.com/acheevo"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
                   aria-label="Follow us on X"
                 >
                   <Twitter className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" strokeWidth={2} />
                 </a>
                 <a
-                  href="#"
+                  href="https://instagram.com/acheevo"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
                   aria-label="Follow us on Instagram"
                 >
                   <Instagram className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" strokeWidth={2} />
                 </a>
                 <a
-                  href="#"
+                  href="https://linkedin.com/company/acheevo"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
                   aria-label="Follow us on LinkedIn"
                 >
                   <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" strokeWidth={2} />
                 </a>
                 <a
-                  href="#"
+                  href="mailto:hello@acheevo.com"
                   className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
                   aria-label="Contact us"
                 >

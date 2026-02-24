@@ -85,9 +85,9 @@ const Hero = () => {
                   size="md"
                   variant="outline"
                   className="text-white border-white/50 hover:bg-white/10 hover:border-white"
-                  aria-label="Start your free journey to discover purpose"
+                  aria-label="Start your first conversation for free"
                 >
-                  Begin for Free
+                  Start Free
                 </Button>
               </div>
             </div>
@@ -100,7 +100,7 @@ const Hero = () => {
               <ScrollReveal animation="fade-in" delay={0}>
                 <div className="flex items-center justify-center mb-md">
                   <div className="inline-flex items-center px-md py-xs bg-white/15 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
-                    <span className="font-body text-body-sm text-gray-100 font-medium">Join 10,000+ people finding their purpose</span>
+                    <span className="font-body text-body-sm text-gray-100 font-medium">10,000+ people have found their purpose — starting here</span>
                   </div>
                 </div>
               </ScrollReveal>
@@ -118,8 +118,9 @@ const Hero = () => {
               {/* Subtitle - Speaks to pain and solution */}
               <ScrollReveal animation="slide-up" delay={200}>
                 <p className="font-body text-body-lg md:text-body-xl text-white leading-relaxed max-w-3xl mx-auto font-light" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)' }}>
-                  Through eight guided conversations, we'll help you understand what you value, what you're good at, and where those two things meet.{' '}
-                  <span className="font-medium text-white">No fluff. Just clarity.</span>
+                  Most people know something feels off — they just can't name it. Acheevo is an AI that asks the right questions across 8 conversations, so you can finally figure out what you actually want to do with your life.
+                  <br />
+                  <span className="font-bold text-white">No fluff. Just clarity.</span>
                 </p>
               </ScrollReveal>
 
@@ -130,9 +131,9 @@ const Hero = () => {
                     variant="gradient"
                     size="lg"
                     className="w-full sm:w-auto font-semibold hover:shadow-glow"
-                    aria-label="Begin your 8-conversation journey to discover your purpose"
+                    aria-label="Start your first conversation for free"
                   >
-                    Begin for Free
+                    Start My First Conversation — It's Free
                   </Button>
 
                   {/* Secondary CTA */}
