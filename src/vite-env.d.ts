@@ -1,5 +1,10 @@
 /// <reference types="vite/client" />
 
+declare module '*.svg' {
+  const src: string;
+  export default src;
+}
+
 interface ImportMetaEnv {
   readonly APP_NAME: string
   readonly API_BASE_URL?: string

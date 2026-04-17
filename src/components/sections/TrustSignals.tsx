@@ -1,72 +1,88 @@
+import { useState, useEffect } from 'react';
 import { Container } from '@/components/ui';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { CheckCircle } from 'lucide-react';
 
+const TRUST_LABELS = ['Free during beta', 'Private and secure', 'No credit card required'];
+const CYCLE_MS = 2500;
+
 const TrustSignals = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setActiveIndex(i => (i + 1) % TRUST_LABELS.length);
+        setVisible(true);
+      }, 300);
+    }, CYCLE_MS);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative p-[80px] bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <section id="trust" aria-label="Trust signals and statistics" className="relative px-md md:px-[80px] py-2xl md:py-[120px] bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 transition-colors duration-300">
       {/* Decorative background pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, rgb(139, 92, 246) 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
+        <div className="absolute inset-0 bg-dots-sm" />
       </div>
 
       <Container className="relative">
-        {/* Section Header with gradient emphasis */}
+        {/* Section Header */}
         <ScrollReveal animation="fade-in">
           <div className="text-center mb-3xl">
-            <h2 className="font-heading text-h4 lg:text-h3 text-gray-900 dark:text-white mb-sm font-semibold">
-              The numbers speak for themselves
+            <p className="eyebrow mb-sm">BY THE NUMBERS</p>
+            <h2 className="font-heading text-h4 lg:text-h3 text-neutral-900 dark:text-white mb-sm font-semibold leading-tight">
+              The numbers <span className="text-primary-700 dark:text-primary-400">speak for themselves</span>
             </h2>
-            <p className="font-body text-body-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="font-body text-body-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto font-light leading-relaxed">
               Real outcomes from real people — tracked since we launched.
             </p>
           </div>
         </ScrollReveal>
 
-        {/* Single horizontal stats strip with gradient border */}
+        {/* Stats strip */}
         <ScrollReveal animation="fade-in" delay={200}>
-          <div className="relative rounded-2xl border-2 border-purple-100 dark:border-purple-800 bg-[#F3EFFE] dark:bg-gray-800 px-xl py-xl">
+          <div className="relative rounded-2xl bg-white dark:bg-neutral-800 px-xl py-xl" style={{ border: '1.5px solid rgba(162,89,251,0.25)', boxShadow: '0 8px 40px rgba(162,89,251,0.08), 0 2px 12px rgba(0,0,0,0.06)' }}>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-xl items-center">
                 {/* Stat: 10k */}
-                <div className="text-center md:border-r border-purple-200 dark:border-purple-700">
-                  <div className="font-heading text-h2 font-semibold text-purple-700 dark:text-purple-400 mb-xs">
+                <div className="text-center md:border-r border-primary-200 dark:border-primary-700">
+                  <div className="font-heading text-h2 font-semibold text-primary-700 dark:text-primary-400 mb-xs">
                     10k
                   </div>
-                  <div className="font-heading text-body-md font-semibold text-gray-900 dark:text-white mb-2xs">
-                    People have started their journey
+                  <div className="font-heading text-body-md font-semibold text-neutral-900 dark:text-white mb-2xs">
+                    Journeys Started
                   </div>
-                  <p className="font-body text-body-sm text-gray-600 dark:text-gray-400">
-                    &nbsp;
+                  <p className="font-body text-body-sm text-body dark:text-neutral-300">
+                    And still growing
                   </p>
                 </div>
 
                 {/* Stat: 50k Conversations */}
-                <div className="text-center md:border-r border-purple-200 dark:border-purple-700">
-                  <div className="font-heading text-h2 font-semibold text-purple-700 dark:text-purple-400 mb-xs">
+                <div className="text-center md:border-r border-primary-200 dark:border-primary-700">
+                  <div className="font-heading text-h2 font-semibold text-primary-700 dark:text-primary-400 mb-xs">
                     50k
                   </div>
-                  <div className="font-heading text-body-md font-semibold text-gray-900 dark:text-white mb-2xs">
+                  <div className="font-heading text-body-md font-semibold text-neutral-900 dark:text-white mb-2xs">
                     Conversations
                   </div>
-                  <p className="font-body text-body-sm text-gray-600 dark:text-gray-400">
+                  <p className="font-body text-body-sm text-body dark:text-neutral-300">
                     AI-guided sessions
                   </p>
                 </div>
 
                 {/* Stat: 4.8 Rating */}
-                <div className="text-center md:border-r border-purple-200 dark:border-purple-700">
-                  <div className="font-heading text-h2 font-semibold text-purple-700 dark:text-purple-400 mb-xs">
+                <div className="text-center md:border-r border-primary-200 dark:border-primary-700">
+                  <div className="font-heading text-h2 font-semibold text-primary-700 dark:text-primary-400 mb-xs">
                     4.8
                   </div>
-                  <div className="font-heading text-body-md font-semibold text-gray-900 dark:text-white mb-2xs">
+                  <div className="font-heading text-body-md font-semibold text-neutral-900 dark:text-white mb-2xs">
                     Average Rating
                   </div>
                   <div className="flex items-center justify-center gap-xs">
-                    <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" strokeWidth={2.5} />
-                    <p className="font-body text-body-sm text-gray-600 dark:text-gray-400">
+                    <CheckCircle className="w-5 h-5 text-success-500 dark:text-success-400" strokeWidth={2.5} />
+                    <p className="font-body text-body-sm text-body dark:text-neutral-300">
                       From 890 reviews
                     </p>
                   </div>
@@ -74,14 +90,14 @@ const TrustSignals = () => {
 
                 {/* Stat: 92% Success Rate */}
                 <div className="text-center">
-                  <div className="inline-block rounded-xl bg-purple-700 dark:bg-purple-600 px-lg py-xl">
+                  <div className="inline-block rounded-xl bg-primary-700 dark:bg-primary-600 px-lg py-xl">
                     <div className="font-heading text-h2 font-semibold text-white mb-xs">
                       92%
                     </div>
-                    <div className="font-heading text-body-md font-semibold text-purple-100 mb-2xs">
+                    <div className="font-heading text-body-md font-semibold text-primary-100 mb-2xs">
                       Report feeling clearer
                     </div>
-                    <p className="font-body text-body-sm text-purple-200">
+                    <p className="font-body text-body-sm text-primary-200">
                       After just 3 sessions
                     </p>
                   </div>
@@ -90,26 +106,15 @@ const TrustSignals = () => {
           </div>
         </ScrollReveal>
 
-        {/* Consolidated trust badges inline strip */}
-        <ScrollReveal animation="fade-in" delay={400}>
-          <div className="mt-2xl flex flex-wrap items-center justify-center gap-md">
-            <div className="inline-flex items-center px-md py-xs bg-purple-50 dark:bg-purple-900/30 rounded-full border border-purple-200 dark:border-purple-700 shadow-lg">
-              <span className="font-body text-body-sm text-gray-700 dark:text-gray-300 font-medium">
-                Free during beta
-              </span>
-            </div>
-            <div className="inline-flex items-center px-md py-xs bg-purple-50 dark:bg-purple-900/30 rounded-full border border-purple-200 dark:border-purple-700 shadow-lg">
-              <span className="font-body text-body-sm text-gray-700 dark:text-gray-300 font-medium">
-                Private & secure
-              </span>
-            </div>
-            <div className="inline-flex items-center px-md py-xs bg-purple-50 dark:bg-purple-900/30 rounded-full border border-purple-200 dark:border-purple-700 shadow-lg">
-              <span className="font-body text-body-sm text-gray-700 dark:text-gray-300 font-medium">
-                No credit card required
-              </span>
-            </div>
-          </div>
-        </ScrollReveal>
+        {/* Cycling trust label */}
+        <div className="mt-lg flex items-center justify-center h-6" aria-live="polite">
+          <span
+            className="font-body text-body-sm text-primary-500 font-medium transition-opacity duration-300"
+            style={{ opacity: visible ? 1 : 0 }}
+          >
+            {TRUST_LABELS[activeIndex]}
+          </span>
+        </div>
       </Container>
     </section>
   );

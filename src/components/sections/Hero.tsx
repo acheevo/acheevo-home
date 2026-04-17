@@ -1,156 +1,94 @@
-import { Button, DarkModeToggle } from '@/components/ui';
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { APP_CONFIG } from '@/config/app';
+import hero1 from '@/assets/HERO1.jpg';
+import hero2 from '@/assets/HERO2.jpg';
+import hero3 from '@/assets/HERO3.jpg';
+
+const HEROES = [hero1, hero2, hero3];
+const CYCLE_MS = 8000;
 
 const Hero = () => {
+  const [bgIndex, setBgIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgIndex(i => (i + 1) % HEROES.length);
+    }, CYCLE_MS);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative h-[90vh] bg-white dark:bg-gray-900 flex items-center justify-center overflow-hidden p-sm transition-colors duration-300">
-      <div className="relative z-10 w-full h-full">
-        {/* Hero container with rounded corners and mountain background */}
-        <div className="relative rounded-3xl overflow-hidden h-full flex flex-col dark:bg-gray-800">
-          {/* Mountain background image */}
+    <section id="hero" aria-label="Hero" className="relative min-h-[90vh] h-[90vh] overflow-hidden flex flex-col rounded-bl-[48px] rounded-br-[48px]">
+
+      {/* Cycling hero backgrounds */}
+      <div className="absolute inset-0" aria-hidden="true">
+        {HEROES.map((src, i) => (
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            key={i}
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat animate-ken-burns will-change-transform"
             style={{
-              backgroundImage: 'url(/images/backgrounds/hero-mountain.jpg)',
+              backgroundImage: `url(${src})`,
+              opacity: bgIndex === i ? 1 : 0,
+              transition: 'opacity 1200ms ease-in-out',
             }}
-          >
-            {/* Gradient overlay for readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-purple-900/23 via-purple-800/19 to-purple-900/26 dark:from-purple-950/40 dark:via-purple-900/35 dark:to-purple-950/45" />
-            <div className="absolute inset-0 bg-purple-600/25 mix-blend-multiply dark:bg-purple-800/35" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent dark:from-black/60" />
-          </div>
+          />
+        ))}
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/23 via-purple-800/19 to-purple-900/26 dark:from-purple-950/40 dark:via-purple-900/35 dark:to-purple-950/45" />
+        <div className="absolute inset-0 bg-purple-600/25 mix-blend-multiply dark:bg-purple-800/35" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent dark:from-black/60" />
+      </div>
 
-          {/* Soft ambient light effect */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 rounded-full filter blur-3xl" />
-          </div>
+      {/* Soft ambient light */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 rounded-full filter blur-3xl" />
+      </div>
 
-          {/* Navigation - Inside hero container */}
-          <nav className="relative z-20 px-lg py-md">
-            <div className="grid grid-cols-3 items-center gap-xs">
-              {/* Section 1: Brand (logomark + wordmark) - Left aligned */}
-              <div className="flex items-center gap-sm">
-                <svg
-                  className="w-24 h-24 text-white"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                  <path d="M12 6 L12 12 L16 16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
-                </svg>
-                <span className="font-heading text-h5 font-bold text-white">
-                  {APP_CONFIG.name}
-                </span>
-              </div>
-
-              {/* Section 2: Navigation Links - Center */}
-              <div className="hidden md:flex items-center justify-center gap-lg">
-                <a
-                  href="#how-it-works"
-                  className="font-body text-body-md text-white/90 hover:text-white transition-all duration-200 font-medium relative group"
-                >
-                  How It Works
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
-                </a>
-                <a
-                  href="#pricing"
-                  className="font-body text-body-md text-white/90 hover:text-white transition-all duration-200 font-medium relative group"
-                >
-                  Pricing
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
-                </a>
-                <a
-                  href="#testimonials"
-                  className="font-body text-body-md text-white/90 hover:text-white transition-all duration-200 font-medium relative group"
-                >
-                  Stories
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-200 group-hover:w-full"></span>
-                </a>
-              </div>
-
-              {/* Section 3: CTAs - Right aligned */}
-              <div className="hidden md:flex items-center justify-end gap-md">
-                <DarkModeToggle />
-                <button
-                  className="font-body text-body-md text-white/90 hover:text-white transition-colors font-medium"
-                  aria-label="Sign in to your account"
-                >
-                  Sign In
-                </button>
-                <Button
-                  size="md"
-                  variant="outline"
-                  className="text-white border-white/50 hover:bg-white/10 hover:border-white"
-                  aria-label="Start your first conversation for free"
-                >
-                  Start Free
-                </Button>
+      {/* Content */}
+      <div className="relative flex-grow flex items-center justify-center text-center z-10 px-lg">
+        <div className="max-w-4xl mx-auto space-y-lg">
+          {/* Social proof badge */}
+          <ScrollReveal animation="fade-in" delay={0}>
+            <div className="flex items-center justify-center mb-md">
+              <div className="inline-flex items-center px-md py-xs bg-white/15 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
+                <span className="font-body text-body-sm text-gray-100 font-medium">+10k people found clarity</span>
               </div>
             </div>
-          </nav>
+          </ScrollReveal>
 
-          {/* Content */}
-          <div className="relative flex-grow flex items-center justify-center text-center z-10 py-3xl px-lg">
-            <div className="max-w-4xl mx-auto space-y-xl">
-              {/* Social proof badge */}
-              <ScrollReveal animation="fade-in" delay={0}>
-                <div className="flex items-center justify-center mb-md">
-                  <div className="inline-flex items-center px-md py-xs bg-white/15 backdrop-blur-md rounded-full border border-white/40 shadow-lg">
-                    <span className="font-body text-body-sm text-gray-100 font-medium">10,000+ people have found their purpose — starting here</span>
-                  </div>
-                </div>
-              </ScrollReveal>
+          {/* Main headline */}
+          <ScrollReveal animation="slide-up" delay={100}>
+            <h1 className="font-heading text-h3 md:text-h2 lg:text-h1 text-white leading-tight" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3)' }}>
+              Find your direction.{' '}
+              <br />
+              <span className="font-semibold">Change your life.</span>
+            </h1>
+          </ScrollReveal>
 
-              {/* Main headline - Emotionally resonant and aspirational */}
-              <ScrollReveal animation="slide-up" delay={100}>
-                <h1 className="font-heading text-h3 md:text-h2 lg:text-h1 text-white leading-tight mb-sm" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.3)' }}>
-                  Feeling stuck?{' '}
-                  <br />
-                  Let's figure out what{' '}
-                  <span className="font-bold">you're here to do</span>
-                </h1>
-              </ScrollReveal>
+          {/* Subtitle */}
+          <ScrollReveal animation="slide-up" delay={200}>
+            <p className="font-body text-body-lg md:text-body-xl text-white/90 leading-relaxed font-light" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)' }}>
+              Your purpose isn&apos;t lost — it&apos;s undiscovered. Acheevo guides you there, one conversation at a time.
+            </p>
+          </ScrollReveal>
 
-              {/* Subtitle - Speaks to pain and solution */}
-              <ScrollReveal animation="slide-up" delay={200}>
-                <p className="font-body text-body-lg md:text-body-xl text-white leading-relaxed max-w-3xl mx-auto font-light" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)' }}>
-                  Most people know something feels off — they just can't name it. Acheevo is an AI that asks the right questions across 8 conversations, so you can finally figure out what you actually want to do with your life.
-                  <br />
-                  <span className="font-bold text-white">No fluff. Just clarity.</span>
-                </p>
-              </ScrollReveal>
-
-              {/* CTA Buttons - Specific and action-oriented */}
-              <ScrollReveal animation="slide-up" delay={300}>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-md pt-xl">
-                  <Button
-                    variant="gradient"
-                    size="lg"
-                    className="w-full sm:w-auto font-semibold hover:shadow-glow"
-                    aria-label="Start your first conversation for free"
-                  >
-                    Start My First Conversation — It's Free
-                  </Button>
-
-                  {/* Secondary CTA */}
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="w-full sm:w-auto font-semibold text-white border-white/50 hover:bg-white/10 hover:border-white"
-                    aria-label="Scroll to see how Acheevo works"
-                  >
-                    See How It Works ↓
-                  </Button>
-                </div>
-              </ScrollReveal>
+          {/* CTAs */}
+          <ScrollReveal animation="slide-up" delay={300}>
+            <div className="flex items-center justify-center pt-md">
+              <Button
+                variant="gradient"
+                size="lg"
+                className="w-full sm:w-auto font-semibold hover:shadow-glow bg-primary-700 hover:bg-primary-800"
+                aria-label="Start your journey and begin your first conversation for free"
+              >
+                Start Your Journey
+              </Button>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
+
     </section>
   );
 };

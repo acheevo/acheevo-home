@@ -5,9 +5,10 @@ export { default as ScrollReveal } from './ScrollReveal';
 export { default as FeatureCard } from './FeatureCard';
 export { default as DarkModeToggle } from './DarkModeToggle';
 export { default as CookieConsent } from './CookieConsent';
+export { default as ErrorBoundary } from './ErrorBoundary';
 
 export type { ButtonProps } from './Button';
 export type { ContainerProps } from './Container';
 export type { WaveDividerProps } from './WaveDivider';
 export type { ScrollRevealProps } from './ScrollReveal';
-export type { FeatureCardProps } from './FeatureCard';
+export type { FeatureCardProps } from './FeatureCard';export { default as ScrollToTop } from './ScrollToTop';

@@ -3,7 +3,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const CTA = () => {
   return (
-    <section className="relative p-[80px] overflow-hidden bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 dark:from-purple-800 dark:via-purple-700 dark:to-pink-700 transition-colors duration-300">
+    <section id="cta" aria-label="Start for free" className="relative px-md md:px-[80px] py-2xl md:py-[120px] overflow-hidden bg-gradient-to-r from-primary-700 via-primary-800 to-primary-900 dark:from-primary-800 dark:via-primary-900 dark:to-primary-900 transition-colors duration-300" style={{ borderRadius: '48px 48px 0 0' }}>
       {/* Enhanced background pattern - scattered dots */}
       <div className="absolute inset-0 opacity-[0.15] dark:opacity-[0.1]">
         <div className="absolute inset-0" style={{
@@ -40,23 +40,23 @@ const CTA = () => {
       {/* Decorative gradient orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-pink-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl" />
       </div>
 
       <Container>
-        <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-2xl">
+        <div className="relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3xl">
 
             {/* Left side - Message */}
             <div className="flex-1 text-center md:text-left">
               <ScrollReveal animation="slide-up">
-                <h2 className="font-heading text-h3 lg:text-h2 text-white leading-tight mb-lg font-bold" style={{ textShadow: '0 4px 12px rgba(0, 0, 0, 0.2)' }}>
-                  The most important conversation you'll have this year is the first one.
+                <h2 className="font-heading text-h4 lg:text-h3 text-white leading-tight mb-lg font-semibold">
+                  Sometimes the right questions<br />are all it takes.
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="slide-up" delay={100}>
-                <p className="font-body text-body-lg lg:text-body-xl text-white/95 leading-relaxed font-light" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.15)' }}>
-                  Start free. No email required. See what surfaces in just 15 minutes.
+                <p className="font-body text-body-lg text-white leading-relaxed font-light">
+                  Start free. No email required. See what surfaces in just 15 minutes.<br />Your data is private and never shared.
                 </p>
               </ScrollReveal>
             </div>
@@ -65,37 +65,19 @@ const CTA = () => {
             <div className="flex-shrink-0">
               <ScrollReveal animation="slide-up" delay={200}>
                 <div className="flex flex-col items-center md:items-end gap-md">
-                  {/* Solid white button with purple text and enhanced padding */}
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-gray-50 shadow-2xl font-bold hover:scale-105 transition-all"
+                    className="bg-white hover:bg-neutral-50 text-primary-700 shadow-2xl font-semibold hover:scale-105 transition-all"
                     style={{
-                      color: '#7C3AED',
                       paddingTop: '16px',
                       paddingBottom: '16px',
                       paddingLeft: '40px',
                       paddingRight: '40px',
-                      fontSize: '18px'
                     }}
                     aria-label="Start your first purpose discovery conversation for free"
                   >
-                    Start Conversation #1 — Free
+                    Start Conversation
                   </Button>
-
-                  {/* Trust note positioned to the right */}
-                  <div className="flex flex-col items-center md:items-end gap-xs text-center md:text-right">
-                    <div className="flex items-center gap-xs">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-white font-medium text-body-md" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)' }}>
-                        Free • No email required
-                      </span>
-                    </div>
-                    <span className="text-white/90 text-body-sm font-light" style={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)' }}>
-                      Your data is private and never shared
-                    </span>
-                  </div>
                 </div>
               </ScrollReveal>
             </div>

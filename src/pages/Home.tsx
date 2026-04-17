@@ -1,16 +1,16 @@
-import { Hero, TrustSignals, Story, Features, WhatYouGet, WhoThisIsFor, Testimonials, Pricing, CTA } from '@/components';
+import { Hero, HowItWorks, WhatYouGet, WhoThisIsFor, Testimonials, TrustSignals, Pricing, FAQ, CTA } from '@/components';
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <TrustSignals />
-      <Story />
-      <Features />
+      <HowItWorks />
       <WhatYouGet />
       <WhoThisIsFor />
       <Testimonials />
+      <TrustSignals />
       <Pricing />
+      <FAQ />
       <CTA />
     </>
   );

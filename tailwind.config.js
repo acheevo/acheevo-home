@@ -21,17 +21,6 @@ export default {
           800: '#5200b7',       // primary800
           900: '#22252b',       // Dark for text
         },
-        // Secondary (Pink/Magenta)
-        secondary: {
-          100: '#fee5ff',       // secondary100
-          200: '#febfff',       // secondary200
-          300: '#fc80ff',       // secondary300
-          400: '#fb40ff',       // secondary400
-          500: '#fa00ff',       // secondaryDefault
-          600: '#bb00bf',       // secondary600
-          700: '#7d0080',       // secondary700
-          800: '#3e0040',       // secondary800
-        },
         // Neutral/Grey scale
         neutral: {
           50: '#fdfdfd',        // neutralWhite
@@ -226,6 +215,7 @@ export default {
         'bounce-subtle': 'bounceSubtle 2s ease-in-out infinite',
         'wiggle': 'wiggle 1s ease-in-out',
         'spin-slow': 'spin 3s linear infinite',
+        'ken-burns': 'kenBurns 28s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -291,12 +281,17 @@ export default {
           '25%': { transform: 'rotate(-3deg)' },
           '75%': { transform: 'rotate(3deg)' },
         },
+        kenBurns: {
+          '0%':   { transform: 'scale(1.0) translate(0%, 0%)' },
+          '33%':  { transform: 'scale(1.08) translate(-1.5%, -1%)' },
+          '66%':  { transform: 'scale(1.05) translate(1%, -0.5%)' },
+          '100%': { transform: 'scale(1.0) translate(0%, 0%)' },
+        },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-primary': 'linear-gradient(135deg, #b67aff 0%, #a259fb 50%, #9137ff 100%)',
-        'gradient-accent': 'linear-gradient(135deg, #a259fb 0%, #9137ff 25%, #fb40ff 75%, #fa00ff 100%)',
       },
       // Enhanced shadow system with depth hierarchy
       boxShadow: {

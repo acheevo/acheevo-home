@@ -9,11 +9,11 @@ const About = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 flex flex-col">
 
       {/* Mini Nav Header */}
-      <header className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-[80px] py-md sticky top-0 z-50">
+      <header className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-md md:px-[80px] py-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link
             to="/"
-            className="font-heading text-h5 font-bold text-heading dark:text-white hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
+            className="font-heading text-h5 font-semibold text-heading dark:text-white hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
           >
             {APP_CONFIG.name}
           </Link>
@@ -33,11 +33,11 @@ const About = () => {
       </header>
 
       {/* Page Hero Header */}
-      <section className="bg-[#F3EFFE] dark:bg-gray-800 p-[80px]">
+      <section className="bg-[#F3EFFE] dark:bg-gray-800 px-md py-xl md:p-[80px]">
         <Container size="lg">
           <ScrollReveal animation="fade-in">
             <p className="eyebrow mb-sm">WHO WE ARE</p>
-            <h1 className="font-heading text-h1 text-heading dark:text-white font-bold mb-lg max-w-3xl">
+            <h1 className="font-heading text-h1 text-heading dark:text-white font-semibold mb-lg max-w-3xl">
               Built by people who{' '}
               <span className="gradient-text">needed this</span>
             </h1>
@@ -51,7 +51,7 @@ const About = () => {
       <main className="flex-grow bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
 
         {/* Our Mission */}
-        <section className="p-[80px]">
+        <section className="px-md py-xl md:p-[80px]">
           <Container size="lg">
             <ScrollReveal animation="slide-up">
               <div className="bg-[#F8F5FF] dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-800 p-lg">
@@ -60,7 +60,7 @@ const About = () => {
                     <Target className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-heading text-h3 text-heading dark:text-white font-bold mb-md">
+                    <h2 className="font-heading text-h3 text-heading dark:text-white font-semibold mb-md">
                       Our Mission
                     </h2>
                     <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed mb-md">
@@ -80,15 +80,15 @@ const About = () => {
         </section>
 
         {/* How We Started */}
-        <section className="px-[80px] pb-[80px]">
+        <section className="px-md md:px-[80px] pb-xl md:pb-[80px]">
           <Container size="lg">
             <ScrollReveal animation="slide-up">
-              <h2 className="font-heading text-h3 text-heading dark:text-white font-bold mb-lg">
+              <h2 className="font-heading text-h3 text-heading dark:text-white font-semibold mb-lg">
                 How We Started
               </h2>
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl p-lg border-2 border-purple-100/50 dark:border-purple-800/50">
                 <div className="flex items-start gap-sm mb-md">
-                  <span className="font-heading text-h2 text-purple-300 dark:text-purple-700 leading-none font-bold">&ldquo;</span>
+                  <span className="font-heading text-h2 text-purple-300 dark:text-purple-700 leading-none font-semibold">&ldquo;</span>
                 </div>
                 <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed mb-md">
                   {APP_CONFIG.name} was born from a simple observation: most people struggling to find their purpose
@@ -109,10 +109,10 @@ const About = () => {
         </section>
 
         {/* What Makes Us Different */}
-        <section className="px-[80px] pb-[80px]">
+        <section className="px-md md:px-[80px] pb-xl md:pb-[80px]">
           <Container size="lg">
             <ScrollReveal animation="fade-in">
-              <h2 className="font-heading text-h3 text-heading dark:text-white font-bold mb-xl">
+              <h2 className="font-heading text-h3 text-heading dark:text-white font-semibold mb-xl">
                 What Makes Us Different
               </h2>
             </ScrollReveal>
@@ -122,7 +122,7 @@ const About = () => {
                   <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-md">
                     <Zap className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   </div>
-                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-bold mb-sm">
+                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-semibold mb-sm">
                     Structured, Not Vague
                   </h3>
                   <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed">
@@ -137,7 +137,7 @@ const About = () => {
                   <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-md">
                     <Clock className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   </div>
-                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-bold mb-sm">
+                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-semibold mb-sm">
                     Self-Paced Progress
                   </h3>
                   <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed">
@@ -152,7 +152,7 @@ const About = () => {
                   <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-md">
                     <CheckCircle className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   </div>
-                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-bold mb-sm">
+                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-semibold mb-sm">
                     Proven Framework
                   </h3>
                   <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed">
@@ -167,7 +167,7 @@ const About = () => {
                   <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-900/50 flex items-center justify-center mb-md">
                     <TrendingUp className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   </div>
-                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-bold mb-sm">
+                  <h3 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-semibold mb-sm">
                     Actionable Outcomes
                   </h3>
                   <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed">
@@ -181,7 +181,7 @@ const About = () => {
         </section>
 
         {/* Our Values */}
-        <section className="px-[80px] pb-[80px]">
+        <section className="px-md md:px-[80px] pb-xl md:pb-[80px]">
           <Container size="lg">
             <ScrollReveal animation="slide-up">
               <div className="bg-[#F8F5FF] dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-800 p-lg">
@@ -190,7 +190,7 @@ const About = () => {
                     <Heart className="w-7 h-7 text-pink-600 dark:text-pink-400" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-heading text-h3 text-heading dark:text-white font-bold mb-lg">
+                    <h2 className="font-heading text-h3 text-heading dark:text-white font-semibold mb-lg">
                       Our Values
                     </h2>
                     <ul className="space-y-lg">
@@ -231,7 +231,7 @@ const About = () => {
         </section>
 
         {/* Get in Touch */}
-        <section className="px-[80px] pb-[80px]">
+        <section className="px-md md:px-[80px] pb-xl md:pb-[80px]">
           <Container size="lg">
             <ScrollReveal animation="slide-up">
               <div className="bg-[#F8F5FF] dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-800 p-lg">
@@ -240,7 +240,7 @@ const About = () => {
                     <Mail className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-heading text-h3 text-heading dark:text-white font-bold mb-md">
+                    <h2 className="font-heading text-h3 text-heading dark:text-white font-semibold mb-md">
                       Get in Touch
                     </h2>
                     <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed mb-lg">
@@ -277,11 +277,11 @@ const About = () => {
         </section>
 
         {/* Bottom CTA */}
-        <section className="px-[80px] pb-[80px]">
+        <section className="px-md md:px-[80px] pb-xl md:pb-[80px]">
           <Container size="lg">
             <ScrollReveal animation="slide-up">
               <div className="bg-white dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-700 p-lg md:p-xl text-center shadow-lg">
-                <h2 className="font-heading text-h3 text-heading dark:text-white font-bold mb-md">
+                <h2 className="font-heading text-h3 text-heading dark:text-white font-semibold mb-md">
                   Ready to Find Your <span className="gradient-text">Purpose?</span>
                 </h2>
                 <p className="font-body text-body-md text-body dark:text-gray-300 leading-relaxed mb-xl max-w-xl mx-auto">

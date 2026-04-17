@@ -1,160 +1,146 @@
 import { Link } from 'react-router-dom';
-import { APP_CONFIG } from '@/config/app';
-import { Twitter, Instagram, Linkedin, Mail, Lock, Shield, Heart } from 'lucide-react';
+import { Container } from '@/components/ui';
+import logoDark from '@/assets/Logos/Logo - Dark Mode.svg';
+
+const NAV_COLUMNS = [
+  {
+    heading: 'Product',
+    links: [
+      { label: 'How it works', href: '#how-it-works' },
+      { label: 'What you get', href: '#your-output' },
+      { label: "Who it's for", href: '#who-its-for' },
+      { label: 'Pricing', href: '#pricing' },
+    ],
+  },
+  {
+    heading: 'Company',
+    links: [
+      { label: 'About', href: '/about', internal: true },
+      { label: 'Contact', href: 'mailto:hello@acheevo.com' },
+    ],
+  },
+  {
+    heading: 'Legal',
+    links: [
+      { label: 'Privacy Policy', href: '/privacy', internal: true },
+      { label: 'Terms of Service', href: '/terms', internal: true },
+      { label: 'Cookie Policy', href: '/cookies', internal: true },
+    ],
+  },
+] as const;
+
+const SOCIAL_LINKS = [
+  {
+    label: 'LinkedIn',
+    href: '#',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'X (Twitter)',
+    href: '#',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Instagram',
+    href: '#',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+      </svg>
+    ),
+  },
+];
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-neutral-50 dark:bg-gray-900 text-body dark:text-gray-300 border-t border-purple-200/20 dark:border-purple-800/30 p-[80px] transition-colors duration-300">
-      <div className="max-w-7xl mx-auto">
-        <div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2xl">
-            {/* Column 1: Brand/About + Newsletter */}
-            <div>
-              <h3 className="font-heading text-h6 text-heading dark:text-white font-bold mb-md">
-                {APP_CONFIG.name}
-              </h3>
-              <p className="font-body text-body-sm leading-relaxed mb-lg text-body dark:text-gray-400 italic">
-                8 conversations. A lifetime of clarity.
-              </p>
+    <footer
+      role="contentinfo"
+      aria-label="Site footer"
+      className="bg-neutral-900 dark:bg-neutral-950 px-md md:px-[80px] pt-[64px] pb-[40px] transition-colors duration-300"
+    >
+      <Container>
+        {/* Top section: brand + nav columns */}
+        <div className="flex flex-col lg:flex-row lg:gap-[80px] gap-[48px] mb-[64px]">
 
-              {/* Newsletter signup */}
-              <div className="mb-lg">
-                <h4 className="font-heading text-body-sm text-heading dark:text-white font-semibold mb-sm">
-                  Get purpose tips
-                </h4>
-                <div className="flex gap-xs">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="flex-1 px-sm py-xs rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white font-body text-body-sm focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
-                    aria-label="Email for newsletter"
-                  />
-                  <button
-                    className="px-md py-xs rounded-lg border border-purple-500 text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 font-body text-body-sm font-medium transition-all duration-200"
-                    aria-label="Subscribe to newsletter"
-                  >
-                    Join
-                  </button>
-                </div>
-              </div>
+          {/* Brand column */}
+          <div className="flex-shrink-0 lg:w-[280px]">
+            <img src={logoDark} alt="Acheevo" style={{ height: '28px', width: 'auto' }} className="mb-sm" />
+            <p className="font-body text-body-sm text-neutral-400 leading-relaxed mb-xl">
+              Discover your purpose<br />in 8 conversations.
+            </p>
 
-              <p className="font-body text-body-sm text-disabled dark:text-gray-500">
-                &copy; {currentYear} {APP_CONFIG.name}
-              </p>
-            </div>
-
-            {/* Column 2: Resources */}
-            <div>
-              <h4 className="font-heading text-body-md text-heading dark:text-white font-semibold mb-md">Resources</h4>
-              <ul className="space-y-sm">
-                <li>
-                  <Link to="/about" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <a href="/#features" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    How It Works
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:hello@acheevo.com" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a href="/#faq" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    FAQ
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 3: Legal */}
-            <div>
-              <h4 className="font-heading text-body-md text-heading dark:text-white font-semibold mb-md">Legal</h4>
-              <ul className="space-y-sm">
-                <li>
-                  <Link to="/privacy" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/terms" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/cookies" className="font-body text-body-sm text-body dark:text-gray-400 hover:text-action dark:hover:text-purple-400 transition-all duration-200 hover:translate-x-1 inline-block">
-                    Cookie Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Column 4: Connect - Social icons in pill row */}
-            <div>
-              <h4 className="font-heading text-body-md text-heading dark:text-white font-semibold mb-md">Connect</h4>
-              <div className="flex gap-sm">
+            {/* Social icons */}
+            <div className="flex gap-lg" role="list" aria-label="Social media links">
+              {SOCIAL_LINKS.map(({ label, href, icon }) => (
                 <a
-                  href="https://twitter.com/acheevo"
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  role="listitem"
+                  className="text-neutral-500 hover:text-white transition-colors duration-200"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
-                  aria-label="Follow us on X"
                 >
-                  <Twitter className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" strokeWidth={2} />
+                  {icon}
                 </a>
-                <a
-                  href="https://instagram.com/acheevo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
-                  aria-label="Follow us on Instagram"
-                >
-                  <Instagram className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" strokeWidth={2} />
-                </a>
-                <a
-                  href="https://linkedin.com/company/acheevo"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
-                  aria-label="Follow us on LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" strokeWidth={2} />
-                </a>
-                <a
-                  href="mailto:hello@acheevo.com"
-                  className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:border-purple-500 dark:hover:border-purple-500 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all duration-200 group"
-                  aria-label="Contact us"
-                >
-                  <Mail className="w-5 h-5 text-gray-600 dark:text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors" strokeWidth={2} />
-                </a>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Trust seals row at bottom */}
-          <div className="mt-2xl pt-lg border-t border-gray-200 dark:border-gray-700">
-            <div className="flex flex-wrap items-center justify-center gap-xl text-body-sm">
-              <div className="flex items-center gap-xs text-gray-600 dark:text-gray-400">
-                <Lock className="w-5 h-5" strokeWidth={2} />
-                <span className="font-medium">Your data is private</span>
+          {/* Nav columns */}
+          <nav
+            aria-label="Footer navigation"
+            className="grid grid-cols-2 md:grid-cols-3 gap-x-[48px] gap-y-[40px] flex-1"
+          >
+            {NAV_COLUMNS.map(({ heading, links }) => (
+              <div key={heading}>
+                <p className="font-heading font-semibold text-body-sm text-primary-500 uppercase tracking-widest mb-sm">
+                  {heading}
+                </p>
+                <ul className="space-y-xs" role="list">
+                  {links.map((link) => (
+                    <li key={link.label}>
+                      {'internal' in link && link.internal ? (
+                        <Link
+                          to={link.href}
+                          className="font-body text-body-md text-neutral-400 hover:text-white transition-colors duration-200"
+                        >
+                          {link.label}
+                        </Link>
+                      ) : (
+                        <a
+                          href={link.href}
+                          className="font-body text-body-md text-neutral-400 hover:text-white transition-colors duration-200"
+                        >
+                          {link.label}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="flex items-center gap-xs text-gray-600 dark:text-gray-400">
-                <Shield className="w-5 h-5" strokeWidth={2} />
-                <span className="font-medium">GDPR Compliant</span>
-              </div>
-              <div className="flex items-center gap-xs text-gray-600 dark:text-gray-400">
-                <Heart className="w-5 h-5" strokeWidth={2} />
-                <span className="font-medium">Made with care</span>
-              </div>
-            </div>
-          </div>
+            ))}
+          </nav>
+
         </div>
-      </div>
+
+        {/* Divider */}
+        <div className="border-t border-neutral-800 mb-lg" aria-hidden="true" />
+
+        {/* Bottom bar: copyright */}
+        <p className="font-body text-body-xs text-neutral-500 text-center">
+          &copy; {new Date().getFullYear()} Acheevo. All rights reserved.
+        </p>
+
+      </Container>
     </footer>
   );
 };

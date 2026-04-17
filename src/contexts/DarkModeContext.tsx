@@ -7,6 +7,7 @@ interface DarkModeContextType {
 
 const DarkModeContext = createContext<DarkModeContextType | undefined>(undefined);
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useDarkMode = () => {
   const context = useContext(DarkModeContext);
   if (!context) {
@@ -19,26 +20,38 @@ interface DarkModeProviderProps {
   children: ReactNode;
 }
 
+function readStoredTheme(): boolean | null {
+  try {
+    const stored = localStorage.getItem('darkMode');
+    if (stored !== null) return stored === 'true';
+  } catch {
+    // localStorage unavailable (private browsing, storage blocked)
+  }
+  return null;
+}
+
+function writeStoredTheme(value: boolean): void {
+  try {
+    localStorage.setItem('darkMode', value.toString());
+  } catch {
+    // localStorage unavailable — silently skip persistence
+  }
+}
+
 export const DarkModeProvider = ({ children }: DarkModeProviderProps) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    // Check localStorage first
-    const stored = localStorage.getItem('darkMode');
-    if (stored !== null) {
-      return stored === 'true';
-    }
-    // Fall back to system preference
+    const stored = readStoredTheme();
+    if (stored !== null) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
   useEffect(() => {
-    // Update the html class
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-    // Persist to localStorage
-    localStorage.setItem('darkMode', isDarkMode.toString());
+    writeStoredTheme(isDarkMode);
   }, [isDarkMode]);
 
   const toggleDarkMode = () => {

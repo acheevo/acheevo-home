@@ -47,12 +47,12 @@ const FeatureCard: FC<FeatureCardProps> = ({
       <div className="w-full md:w-3/5 flex flex-col justify-center">
         {badge && (
           <div className="inline-flex mb-sm">
-            <div className="w-16 h-16 flex items-center justify-center text-h6 font-bold glass-purple text-primary-700 rounded-2xl transition-all duration-300 hover:shadow-glow">
+            <div className="w-16 h-16 flex items-center justify-center text-h6 font-semibold glass-purple text-primary-700 rounded-2xl transition-all duration-300 hover:shadow-glow">
               {badge}
             </div>
           </div>
         )}
-        <h3 className="text-h4 lg:text-h3 font-bold text-neutral-900 mb-2xs leading-tight">
+        <h3 className="text-h4 lg:text-h3 font-semibold text-neutral-900 mb-2xs leading-tight">
           {title}
         </h3>
         <p className="text-body-lg text-neutral-600 leading-relaxed">

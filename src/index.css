@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply bg-page dark:bg-gray-900 text-body dark:text-gray-300 antialiased font-body transition-colors duration-300;
+    @apply bg-page dark:bg-neutral-900 text-body dark:text-neutral-300 antialiased font-body transition-colors duration-300;
   }
 
   /* Figma token headings - Poppins font with semantic colors */
@@ -23,6 +23,19 @@
   h4 { @apply text-h4; }
   h5 { @apply text-h5; }
   h6 { @apply text-h6; }
+
+  /* Global keyboard focus indicator */
+  :focus-visible {
+    outline: 2px solid rgb(162, 89, 251);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  *:focus-visible {
+    outline: 2px solid rgb(162, 89, 251);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
@@ -115,32 +128,27 @@
     );
   }
 
-  .glass-purple {
-    @apply backdrop-blur-2xl border shadow-glow rounded-3xl;
-    border-color: rgba(206, 166, 255, 0.3);
-    background: linear-gradient(
-      135deg,
-      rgba(246, 238, 255, 0.9) 0%,
-      rgba(254, 229, 255, 0.8) 100%
-    );
-  }
-
   .glass-subtle {
     @apply backdrop-blur-xl border shadow-soft rounded-3xl;
     border-color: rgba(236, 237, 238, 0.5);
     background-color: rgba(255, 255, 255, 0.6);
   }
 
-  /* Figma token gradient text (purple to pink) */
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 via-primary-600 to-secondary-500
-           bg-clip-text text-transparent;
-  }
-
   /* Light gradient text for dark backgrounds */
   .gradient-text-light {
     @apply bg-gradient-to-r from-white via-purple-100 to-pink-100
            bg-clip-text text-transparent;
+  }
+
+  /* Repeating purple dot pattern — used as section background decoration */
+  .bg-dots {
+    background-image: radial-gradient(circle at 2px 2px, rgb(162, 89, 251) 1px, transparent 0);
+    background-size: 48px 48px;
+  }
+
+  .bg-dots-sm {
+    background-image: radial-gradient(circle at 2px 2px, rgb(162, 89, 251) 1px, transparent 0);
+    background-size: 40px 40px;
   }
 }
 
@@ -185,33 +193,13 @@
   }
 
   /* Figma Token Gradients */
-  .gradient-calm {
-    background: linear-gradient(135deg, #a259fb 0%, #fa00ff 100%);
-  }
-
   .gradient-calm-soft {
     background: linear-gradient(180deg, #f6eeff 0%, #fdfdfd 100%);
-  }
-
-  .gradient-peaceful {
-    background: linear-gradient(135deg, #fdfdfd 0%, #f6eeff 50%, #fee5ff 100%);
-  }
-
-  .gradient-hero {
-    background: linear-gradient(135deg, rgba(162, 89, 251, 0.85) 0%, rgba(250, 0, 255, 0.85) 100%);
   }
 
   /* Enhanced gradient variants */
   .gradient-primary {
     background: linear-gradient(135deg, #b67aff 0%, #a259fb 50%, #9137ff 100%);
-  }
-
-  .gradient-secondary {
-    background: linear-gradient(135deg, #fc80ff 0%, #fb40ff 50%, #fa00ff 100%);
-  }
-
-  .gradient-accent {
-    background: linear-gradient(135deg, #a259fb 0%, #9137ff 25%, #fb40ff 75%, #fa00ff 100%);
   }
 
   .gradient-subtle {
@@ -225,9 +213,9 @@
   .gradient-mesh {
     background:
       radial-gradient(at 0% 0%, rgba(162, 89, 251, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(250, 0, 255, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(162, 89, 251, 0.08) 0px, transparent 50%),
       radial-gradient(at 100% 100%, rgba(162, 89, 251, 0.15) 0px, transparent 50%),
-      radial-gradient(at 0% 100%, rgba(250, 0, 255, 0.15) 0px, transparent 50%);
+      radial-gradient(at 0% 100%, rgba(162, 89, 251, 0.08) 0px, transparent 50%);
   }
 
   /* Depth and elevation utilities */
@@ -306,5 +294,11 @@
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;  /* Chrome, Safari and Opera */
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: max(theme(spacing.md), env(safe-area-inset-bottom));
   }
 }

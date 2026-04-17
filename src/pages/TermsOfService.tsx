@@ -43,7 +43,7 @@ const SectionCard = ({
       id={id}
       className="bg-[#F8F5FF] dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-800 p-lg mb-md scroll-mt-24"
     >
-      <h2 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-bold mb-md">
+      <h2 className="font-heading text-h5 text-purple-700 dark:text-purple-400 font-semibold mb-md">
         {title}
       </h2>
       {children}
@@ -58,11 +58,11 @@ const TermsOfService = () => {
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 flex flex-col">
 
       {/* Mini Nav Header */}
-      <header className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-[80px] py-md sticky top-0 z-50">
+      <header className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-md md:px-[80px] py-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link
             to="/"
-            className="font-heading text-h5 font-bold text-heading dark:text-white hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
+            className="font-heading text-h5 font-semibold text-heading dark:text-white hover:text-purple-700 dark:hover:text-purple-400 transition-colors"
           >
             {APP_CONFIG.name}
           </Link>
@@ -82,11 +82,11 @@ const TermsOfService = () => {
       </header>
 
       {/* Page Hero Header */}
-      <section className="bg-[#F3EFFE] dark:bg-gray-800 p-[80px]">
+      <section className="bg-[#F3EFFE] dark:bg-gray-800 px-md py-xl md:p-[80px]">
         <Container size="xl">
           <ScrollReveal animation="fade-in">
             <p className="eyebrow mb-sm">LEGAL</p>
-            <h1 className="font-heading text-h1 text-heading dark:text-white font-bold mb-lg max-w-3xl">
+            <h1 className="font-heading text-h1 text-heading dark:text-white font-semibold mb-lg max-w-3xl">
               Terms of{' '}
               <span className="gradient-text">Service</span>
             </h1>
@@ -101,14 +101,14 @@ const TermsOfService = () => {
       </section>
 
       <main className="flex-grow bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-        <div className="p-[80px]">
+        <div className="px-md py-xl md:p-[80px]">
           <Container size="xl">
             <div className="flex gap-xl items-start">
 
               {/* Sticky Table of Contents — desktop only */}
-              <aside className="hidden xl:block w-64 flex-shrink-0 sticky top-24">
+              <aside className="hidden xl:block w-[240px] flex-shrink-0 sticky top-24">
                 <div className="bg-[#F8F5FF] dark:bg-gray-800 rounded-2xl border-2 border-purple-100 dark:border-purple-800 p-md">
-                  <p className="font-heading text-body-sm text-purple-700 dark:text-purple-400 font-bold mb-md uppercase tracking-wider">
+                  <p className="font-heading text-body-sm text-purple-700 dark:text-purple-400 font-semibold mb-md uppercase tracking-wider">
                     Contents
                   </p>
                   <nav className="space-y-xs">
@@ -116,7 +116,7 @@ const TermsOfService = () => {
                       <a
                         key={section}
                         href={`#${toId(section)}`}
-                        className="block font-body text-body-sm text-body dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors leading-snug py-[2px]"
+                        className="block font-body text-body-sm text-body dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 transition-colors leading-snug py-[2px] [overflow-wrap:anywhere]"
                       >
                         {section}
                       </a>
@@ -204,7 +204,7 @@ const TermsOfService = () => {
                           <Gift className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                         </div>
                         <div>
-                          <p className="font-heading text-body-md text-purple-700 dark:text-purple-300 font-bold mb-xs">
+                          <p className="font-heading text-body-md text-purple-700 dark:text-purple-300 font-semibold mb-xs">
                             30-Day Money-Back Guarantee
                           </p>
                           <p className="font-body text-body-md text-purple-600 dark:text-purple-400 leading-relaxed">

@@ -18,8 +18,11 @@ const CookieConsent = () => {
   });
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
+    try {
+      const consent = localStorage.getItem('cookieConsent');
+      if (!consent) setVisible(true);
+    } catch {
+      // localStorage unavailable — show banner by default
       setVisible(true);
     }
   }, []);
@@ -30,7 +33,11 @@ const CookieConsent = () => {
       preferences: prefs || preferences,
       timestamp: new Date().toISOString(),
     };
-    localStorage.setItem('cookieConsent', JSON.stringify(data));
+    try {
+      localStorage.setItem('cookieConsent', JSON.stringify(data));
+    } catch {
+      // localStorage unavailable — consent won't persist, but don't crash
+    }
     setVisible(false);
   };
 
@@ -61,7 +68,7 @@ const CookieConsent = () => {
   if (!visible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-md">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-md pb-safe">
       <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-2xl border border-purple-200 dark:border-purple-800 p-lg transition-colors duration-300">
         {!showPreferences ? (
           <>
@@ -77,7 +84,7 @@ const CookieConsent = () => {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-xs w-full sm:w-auto">
                 <button
                   onClick={handleAcceptAll}
-                  className="px-md py-sm bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-lg font-semibold text-body-sm transition-all duration-200 whitespace-nowrap"
+                  className="px-md py-sm bg-gradient-to-r from-primary-700 to-primary-900 hover:from-primary-800 hover:to-primary-900 text-white rounded-lg font-semibold text-body-sm transition-all duration-200 whitespace-nowrap"
                 >
                   Accept All
                 </button>
@@ -142,7 +149,7 @@ const CookieConsent = () => {
             <div className="flex flex-col sm:flex-row gap-xs">
               <button
                 onClick={handleSavePreferences}
-                className="px-md py-sm bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-lg font-semibold text-body-sm transition-all duration-200"
+                className="px-md py-sm bg-gradient-to-r from-primary-700 to-primary-900 hover:from-primary-800 hover:to-primary-900 text-white rounded-lg font-semibold text-body-sm transition-all duration-200"
               >
                 Save Preferences
               </button>

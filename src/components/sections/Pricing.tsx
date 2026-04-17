@@ -1,119 +1,87 @@
 import { Container, Button, ScrollReveal } from '@/components/ui';
-import { Check, ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { Check } from 'lucide-react';
 
 const Pricing = () => {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
-  const faqs = [
-    {
-      question: "How is Acheevo different from ChatGPT?",
-      answer: "ChatGPT is a general-purpose assistant that responds to whatever you ask. Acheevo is specifically designed for purpose discovery with a structured framework of 8 conversations that build on each other. It knows what questions to ask, when to dig deeper, and how to help you connect insights across conversations. Think of ChatGPT as a blank page—Acheevo is a guided journey with a clear destination."
-    },
-    {
-      question: "How long does each session take?",
-      answer: "Each conversation takes 15-30 minutes, but you can go at your own pace. Some people complete one per day, others prefer one per week. There's no rush—the platform saves your progress automatically, and you can pause and resume whenever you like. Most people complete all 8 conversations within 4-8 weeks."
-    },
-    {
-      question: "Do I need to be in crisis to use Acheevo?",
-      answer: "Not at all! Acheevo is for anyone seeking clarity, whether you're facing a major life decision, feeling stuck in your career, or simply curious about your purpose. You don't need to be in crisis—you just need to be ready for honest reflection. Many users come to Acheevo during calm periods to gain clarity before the next chapter of their life."
-    },
-    {
-      question: "What happens when beta ends?",
-      answer: "When the beta period ends, you'll have the option to continue with a paid subscription at €15/month. You'll be notified well in advance, and all your conversation history and insights will be preserved. If you choose not to continue, you can export all your data before the transition."
-    },
-    {
-      question: "Can I cancel anytime?",
-      answer: "Absolutely! There's no long-term commitment. You can cancel your subscription at any time, and you'll retain access until the end of your billing period. You can also export all your insights and conversation history at any point."
-    },
-    {
-      question: "Is my data private and secure?",
-      answer: "Yes, your privacy is our top priority. Your conversations and insights are encrypted and stored securely. We never share your personal data with third parties, and you have full control over your information. You can delete your data at any time."
-    },
-    {
-      question: "How does Acheevo use AI?",
-      answer: "Acheevo's conversations are powered by AI. Your responses are not used to train AI models. You can delete your data at any time. We believe in full transparency about how our technology works and how your information is handled."
-    }
-  ];
-
   return (
-    <section id="pricing" className="p-[80px] bg-gradient-to-b from-white to-neutral-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <section id="pricing" aria-label="Pricing" className="px-md md:px-[80px] py-2xl md:py-[120px] bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 transition-colors duration-300">
       <Container>
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-xl">
           <ScrollReveal animation="fade-in">
-            <h2 className="text-h4 lg:text-h3 font-bold text-neutral-900 dark:text-white mb-sm">
-              Simple, <span className="gradient-text">Transparent Pricing</span>
+            <p className="eyebrow mb-sm">PRICING</p>
+            <h2 className="font-heading text-h4 lg:text-h3 font-semibold text-neutral-900 dark:text-white mb-sm leading-tight">
+              Simple, <span className="text-primary-700 dark:text-primary-400">Transparent Pricing</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal animation="fade-in" delay={100}>
-            <p className="text-body-lg text-neutral-600 dark:text-gray-300 font-light">
-              Try the full experience free during beta. No credit card, no catch.
+            <p className="font-body text-body-lg text-neutral-600 dark:text-neutral-300 font-light">
+              Try the full experience free during beta. No credit card. Your conversations are private.
             </p>
           </ScrollReveal>
         </div>
 
         {/* Two-tier pricing cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-lg max-w-5xl mx-auto mb-xl">
+        <div className="flex flex-wrap justify-center gap-lg mb-2xl">
           {/* Left Card - Beta (Current) */}
-          <ScrollReveal animation="slide-up" delay={200}>
-            <div className="relative glass-purple dark:bg-gray-800 dark:border-purple-700 transition-all duration-300 p-lg space-y-md overflow-hidden shadow-elevated hover:shadow-elevated-lg transform hover:-translate-y-1 border-4 border-purple-500 dark:border-purple-600">
-              {/* "Current" Badge */}
-              <div className="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-purple-500 text-white px-lg py-xs rounded-bl-2xl font-semibold text-body-sm">
-                Current
+          <ScrollReveal animation="slide-up" delay={200} className="w-full md:w-[480px]">
+            <div
+              className="relative flex flex-col items-start bg-white dark:bg-neutral-800 rounded-3xl duration-300 w-full"
+              style={{
+                padding: '24px',
+                gap: '24px',
+                border: '1.5px solid rgba(162,89,251,0.25)',
+                boxShadow: '0 8px 40px rgba(162,89,251,0.08), 0 2px 12px rgba(0,0,0,0.06)',
+              }}
+            >
+              {/* "Current" Badge — absolute top right */}
+              <div className="absolute top-0 right-0 bg-primary-700 text-white px-lg py-xs rounded-bl-2xl rounded-tr-3xl flex items-center gap-sm">
+                <span className="font-semibold text-body-sm">Current</span>
+                <div className="w-px h-3 bg-primary-400 opacity-50" aria-hidden="true"></div>
+                <div className="flex items-center gap-xs">
+                  <div className="w-[6px] h-[6px] rounded-full animate-pulse flex-shrink-0 bg-primary-200" aria-hidden="true"></div>
+                  <span className="text-body-xs font-medium text-primary-200">Ending soon</span>
+                </div>
               </div>
 
-              {/* Gradient accent bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 gradient-primary"></div>
-
-              {/* Subtle gradient mesh background */}
-              <div className="absolute inset-0 gradient-mesh opacity-30 dark:opacity-20 pointer-events-none"></div>
-
               {/* Tier label */}
-              <div className="relative z-10 text-center pt-md">
-                <h3 className="text-h5 font-bold text-neutral-900 dark:text-white mb-xs">
+              <div className="text-left pt-md w-full">
+                <h3 className="font-heading text-h5 font-semibold text-neutral-900 dark:text-white mb-xs">
                   Beta Access
                 </h3>
-                <p className="text-body-md text-neutral-600 dark:text-gray-400">
-                  Full access, completely free — while it lasts
+                <p className="font-body text-body-md text-body dark:text-neutral-300">
+                  Full access, completely free
                 </p>
               </div>
 
               {/* Price */}
-              <div className="text-center pb-md border-b border-neutral-200 dark:border-gray-700 relative z-10">
-                <div className="text-h1 font-bold gradient-text mb-xs">
+              <div className="text-left w-full">
+                <div className="text-h2 font-semibold text-primary-700 dark:text-primary-400">
                   Free
-                </div>
-                <div className="flex items-center justify-center gap-xs">
-                  <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse"></div>
-                  <p className="text-orange-600 dark:text-orange-400 text-body-sm font-semibold">
-                    Beta ending soon
-                  </p>
                 </div>
               </div>
 
               {/* Features */}
-              <ul className="space-y-sm relative z-10">
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">8 guided conversations</span>
+              <ul className="space-y-xs w-full flex-1">
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-action dark:text-primary-400 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">8 guided conversations</span>
                 </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">Save and export your insights</span>
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-action dark:text-primary-400 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">Save and export your insights</span>
                 </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">Come back anytime</span>
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-action dark:text-primary-400 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">Come back anytime</span>
                 </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-purple-600 dark:text-purple-400 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-700 dark:text-gray-300 text-body-md">All future updates included</span>
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-action dark:text-primary-400 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">All future updates included</span>
                 </li>
               </ul>
 
               {/* CTA */}
-              <div className="relative z-10 space-y-xs pt-md">
+              <div className="space-y-xs w-full">
                 <Button
                   variant="gradient"
                   size="lg"
@@ -122,7 +90,7 @@ const Pricing = () => {
                 >
                   Claim My Free Access
                 </Button>
-                <p className="text-center text-body-sm text-neutral-600 dark:text-gray-400">
+                <p className="text-left text-body-sm text-neutral-600 dark:text-neutral-400">
                   No email required to start
                 </p>
               </div>
@@ -130,76 +98,78 @@ const Pricing = () => {
           </ScrollReveal>
 
           {/* Right Card - After Beta */}
-          <ScrollReveal animation="slide-up" delay={300}>
-            <div className="relative bg-white dark:bg-gray-800 transition-all duration-300 p-lg space-y-md overflow-hidden shadow-card rounded-3xl border-2 border-neutral-200 dark:border-gray-700 opacity-75">
+          <ScrollReveal animation="slide-up" delay={300} className="w-full md:w-[480px]">
+            <div
+              className="relative flex flex-col items-start bg-white dark:bg-neutral-800 rounded-3xl duration-300 opacity-75 w-full"
+              style={{
+                padding: '24px',
+                gap: '24px',
+                border: '1.5px solid rgba(162,89,251,0.25)',
+                boxShadow: '0 8px 40px rgba(162,89,251,0.08), 0 2px 12px rgba(0,0,0,0.06)',
+              }}
+            >
               {/* "Coming Soon" Badge */}
-              <div className="absolute top-0 right-0 bg-gradient-to-r from-neutral-400 to-neutral-300 text-white px-lg py-xs rounded-bl-2xl font-semibold text-body-sm">
+              <div className="absolute top-0 right-0 bg-gradient-to-r from-neutral-400 to-neutral-300 text-white px-lg py-xs rounded-bl-2xl rounded-tr-3xl font-semibold text-body-sm">
                 Coming Soon
               </div>
 
               {/* Tier label */}
-              <div className="relative z-10 text-center pt-md">
-                <h3 className="text-h5 font-bold text-neutral-700 dark:text-gray-300 mb-xs">
+              <div className="text-left pt-md w-full">
+                <h3 className="font-heading text-h5 font-semibold text-neutral-700 dark:text-neutral-300 mb-xs">
                   After Beta
                 </h3>
-                <p className="text-body-md text-neutral-500 dark:text-gray-400">
-                  When beta ends
+                <p className="font-body text-body-md text-body dark:text-neutral-300">
+                  When beta ends · Simple monthly pricing
                 </p>
               </div>
 
               {/* Price */}
-              <div className="text-center pb-md border-b border-neutral-200 dark:border-gray-700 relative z-10">
-                <div className="text-h1 font-bold text-neutral-700 dark:text-gray-300 mb-xs">
+              <div className="text-left w-full">
+                <div className="text-h2 font-semibold text-neutral-700 dark:text-neutral-300">
                   €15
-                  <span className="text-h5 text-neutral-500 dark:text-gray-400 font-normal">/month</span>
+                  <span className="text-h5 text-neutral-500 dark:text-neutral-400 font-normal">/month</span>
                 </div>
-                <p className="text-neutral-500 dark:text-gray-400 text-body-md">
-                  Simple monthly pricing
-                </p>
               </div>
 
               {/* Features */}
-              <ul className="space-y-sm relative z-10">
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Everything in Beta, plus:</span>
+              <ul className="space-y-xs w-full flex-1">
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-neutral-400 dark:text-neutral-500 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">Everything in Beta, plus:</span>
                 </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Priority support and coaching</span>
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-neutral-400 dark:text-neutral-500 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">Priority support and early feature access</span>
                 </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Advanced analytics and tracking</span>
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-neutral-400 dark:text-neutral-500 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">Advanced analytics and tracking</span>
                 </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Quarterly purpose check-ins</span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-6 h-6 text-neutral-400 dark:text-gray-500 mr-xs flex-shrink-0 mt-0.5" strokeWidth={2.5} />
-                  <span className="text-neutral-600 dark:text-gray-400 text-body-md">Early access to new features</span>
+                <li className="flex items-center gap-sm">
+                  <Check className="w-[20px] h-[20px] text-neutral-400 dark:text-neutral-500 flex-shrink-0" strokeWidth={2.5} />
+                  <span className="font-body text-body-md text-body dark:text-neutral-300">Quarterly purpose check-ins</span>
                 </li>
               </ul>
 
               {/* CTA - Email Capture */}
-              <div className="relative z-10 space-y-xs pt-md">
-                <div className="flex gap-xs">
+              <div className="space-y-xs w-full">
+                <label htmlFor="notify-email" className="sr-only">Email address for launch notification</label>
+                <div className="flex items-center w-full rounded-xl border-2 border-neutral-300 dark:border-neutral-600 bg-white dark:bg-neutral-700 focus-within:border-primary-500 dark:focus-within:border-primary-400 transition-colors pr-xs">
                   <input
+                    id="notify-email"
                     type="email"
                     placeholder="Your email"
-                    className="flex-1 px-md py-sm rounded-lg border-2 border-neutral-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-gray-500 focus:outline-none focus:border-purple-500 dark:focus:border-purple-400 transition-colors"
+                    className="flex-1 min-w-0 px-md py-sm bg-transparent text-neutral-900 dark:text-white placeholder:text-neutral-400 dark:placeholder:text-neutral-500 focus:outline-none"
                     aria-label="Email address for paid tier updates"
                   />
-                  <Button
-                    size="md"
-                    className="bg-neutral-700 dark:bg-gray-600 text-white hover:bg-neutral-800 dark:hover:bg-gray-500 transition-colors whitespace-nowrap"
+                  <button
+                    className="flex-shrink-0 bg-neutral-700 dark:bg-neutral-600 text-white hover:bg-neutral-800 dark:hover:bg-neutral-500 transition-colors font-semibold text-body-sm px-md py-xs rounded-lg"
                     aria-label="Get notified when paid tier launches"
                   >
                     Notify Me
-                  </Button>
+                  </button>
                 </div>
-                <p className="text-center text-body-sm text-neutral-500 dark:text-gray-400">
+                <p className="text-left text-body-sm text-neutral-500 dark:text-neutral-400">
                   Get notified when it launches
                 </p>
               </div>
@@ -207,48 +177,6 @@ const Pricing = () => {
           </ScrollReveal>
         </div>
 
-        {/* FAQ Section */}
-        <div className="max-w-3xl mx-auto">
-          <ScrollReveal animation="fade-in" delay={400}>
-            <h3 className="text-h5 lg:text-h4 font-bold text-neutral-900 dark:text-white text-center mb-xl">
-              Frequently Asked Questions
-            </h3>
-          </ScrollReveal>
-
-          <div className="space-y-sm">
-            {faqs.map((faq, index) => (
-              <ScrollReveal key={index} animation="slide-up" delay={450 + index * 50}>
-                <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-soft overflow-hidden border border-neutral-200 dark:border-gray-700">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                    className="w-full px-xl py-lg flex items-center justify-between text-left hover:bg-neutral-50 dark:hover:bg-gray-700/50 transition-colors"
-                    aria-expanded={openFaq === index}
-                  >
-                    <span className="font-heading text-body-lg font-semibold text-neutral-900 dark:text-white pr-md">
-                      {faq.question}
-                    </span>
-                    <ChevronDown
-                      className={`w-6 h-6 text-neutral-500 dark:text-gray-400 flex-shrink-0 transition-transform duration-300 ${
-                        openFaq === index ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      openFaq === index ? 'max-h-96' : 'max-h-0'
-                    }`}
-                  >
-                    <div className="px-xl pb-lg pt-xs">
-                      <p className="text-body-md text-neutral-600 dark:text-gray-300 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
       </Container>
     </section>
   );
