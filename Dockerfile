@@ -17,7 +17,9 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM nginx:alpine AS production
+FROM nginx:1.30.7-alpine@sha256:caf4e1e032a20f9c3c5e28fc7f25ffd768ad8677b4975c54193075997b3a97e3 AS production
+
+RUN apk --no-cache upgrade libxml2
 
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf
